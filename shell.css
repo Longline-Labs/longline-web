@@ -49,8 +49,8 @@
   z-index: 60;
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-md);
-  background: var(--accent-fill);
-  color: var(--on-accent);
+  background: var(--ll-accent-fill);
+  color: var(--ll-on-accent);
   font-weight: 600;
   text-decoration: none;
   transform: translateY(-300%);
@@ -60,7 +60,7 @@
 }
 
 .ll-shell :where(a, button, summary, input, select, textarea, [tabindex]):focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--ll-accent);
   outline-offset: 2px;
 }
 
@@ -86,7 +86,7 @@
   top: 0;
   z-index: 40;
   background: var(--paper-raised);
-  border-top: 3px solid var(--accent);
+  border-top: 3px solid var(--ll-accent);
   border-bottom: 1px solid var(--hairline);
 }
 
@@ -151,11 +151,11 @@
 }
 
 .ll-link:hover {
-  color: var(--accent-text);
+  color: var(--ll-accent-text);
 }
 
 .ll-nav-link[aria-current="page"] {
-  color: var(--accent-text);
+  color: var(--ll-accent-text);
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 6px;
@@ -215,9 +215,9 @@
 
 .ll-btn-primary,
 .ll-btn-primary:hover {
-  border-color: var(--accent-fill);
-  background: var(--accent-fill);
-  color: var(--on-accent);
+  border-color: var(--ll-accent-fill);
+  background: var(--ll-accent-fill);
+  color: var(--ll-on-accent);
 }
 
 .ll-btn-primary:hover {
@@ -380,7 +380,7 @@ a.ll-switcher-app:hover {
   height: 40px;
   border-radius: var(--radius-md);
   background: var(--paper);
-  box-shadow: inset 0 0 0 2px var(--accent);
+  box-shadow: inset 0 0 0 2px var(--ll-accent);
 }
 
 .ll-switcher-off {
@@ -424,7 +424,7 @@ a.ll-switcher-app:hover {
 }
 
 .ll-switcher-domain {
-  color: var(--accent-text);
+  color: var(--ll-accent-text);
   font-size: 12.5px;
   line-height: 16px;
 }
@@ -472,7 +472,7 @@ a.ll-switcher-app:hover {
 }
 
 .ll-menu-link[aria-current="page"] {
-  color: var(--accent-text);
+  color: var(--ll-accent-text);
 }
 
 @media (max-width: 899px) {
@@ -548,7 +548,7 @@ a.ll-switcher-app:hover {
 }
 
 .ll-footer-link:hover {
-  color: var(--accent-text);
+  color: var(--ll-accent-text);
 }
 
 .ll-footer-action {

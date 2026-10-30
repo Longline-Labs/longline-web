@@ -31,22 +31,22 @@
   --status-warn-tint: #f5ecd6;
   --status-danger-tint: #f6e2de;
   --status-info-tint: #dfe9ec;
-  --accent-teal: #1d4b5a;
-  --accent-teal-text: #1d4b5a;
-  --accent-teal-fill: #1d4b5a;
-  --accent-teal-on-fill: #f6f3ec;
-  --accent-koi: #d9643a;
-  --accent-koi-text: #b24a24;
-  --accent-koi-fill: #b24a24;
-  --accent-koi-on-fill: #f6f3ec;
-  --accent-brass: #8a5f10;
-  --accent-brass-text: #8a5f10;
-  --accent-brass-fill: #8a5f10;
-  --accent-brass-on-fill: #f6f3ec;
-  --accent-kelp: #2e8a68;
-  --accent-kelp-text: #1f6b50;
-  --accent-kelp-fill: #1f6b50;
-  --accent-kelp-on-fill: #f6f3ec;
+  --ll-accent-teal: #1d4b5a;
+  --ll-accent-teal-text: #1d4b5a;
+  --ll-accent-teal-fill: #1d4b5a;
+  --ll-accent-teal-on-fill: #f6f3ec;
+  --ll-accent-koi: #d9643a;
+  --ll-accent-koi-text: #b24a24;
+  --ll-accent-koi-fill: #b24a24;
+  --ll-accent-koi-on-fill: #f6f3ec;
+  --ll-accent-brass: #8a5f10;
+  --ll-accent-brass-text: #8a5f10;
+  --ll-accent-brass-fill: #8a5f10;
+  --ll-accent-brass-on-fill: #f6f3ec;
+  --ll-accent-kelp: #2e8a68;
+  --ll-accent-kelp-text: #1f6b50;
+  --ll-accent-kelp-fill: #1f6b50;
+  --ll-accent-kelp-on-fill: #f6f3ec;
   color-scheme: light;
 }
 
@@ -79,22 +79,22 @@
   --status-warn-tint: #3b3016;
   --status-danger-tint: #43231f;
   --status-info-tint: #1e3a44;
-  --accent-teal: #7fb4c4;
-  --accent-teal-text: #7fb4c4;
-  --accent-teal-fill: #7fb4c4;
-  --accent-teal-on-fill: #13232a;
-  --accent-koi: #e8865c;
-  --accent-koi-text: #f0a07a;
-  --accent-koi-fill: #e8865c;
-  --accent-koi-on-fill: #13232a;
-  --accent-brass: #d9a94a;
-  --accent-brass-text: #e4b85e;
-  --accent-brass-fill: #d9a94a;
-  --accent-brass-on-fill: #13232a;
-  --accent-kelp: #4fb08a;
-  --accent-kelp-text: #67c39d;
-  --accent-kelp-fill: #4fb08a;
-  --accent-kelp-on-fill: #13232a;
+  --ll-accent-teal: #7fb4c4;
+  --ll-accent-teal-text: #7fb4c4;
+  --ll-accent-teal-fill: #7fb4c4;
+  --ll-accent-teal-on-fill: #13232a;
+  --ll-accent-koi: #e8865c;
+  --ll-accent-koi-text: #f0a07a;
+  --ll-accent-koi-fill: #e8865c;
+  --ll-accent-koi-on-fill: #13232a;
+  --ll-accent-brass: #d9a94a;
+  --ll-accent-brass-text: #e4b85e;
+  --ll-accent-brass-fill: #d9a94a;
+  --ll-accent-brass-on-fill: #13232a;
+  --ll-accent-kelp: #4fb08a;
+  --ll-accent-kelp-text: #67c39d;
+  --ll-accent-kelp-fill: #4fb08a;
+  --ll-accent-kelp-on-fill: #13232a;
   color-scheme: dark;
 }
 
@@ -128,22 +128,22 @@
     --status-warn-tint: #3b3016;
     --status-danger-tint: #43231f;
     --status-info-tint: #1e3a44;
-    --accent-teal: #7fb4c4;
-    --accent-teal-text: #7fb4c4;
-    --accent-teal-fill: #7fb4c4;
-    --accent-teal-on-fill: #13232a;
-    --accent-koi: #e8865c;
-    --accent-koi-text: #f0a07a;
-    --accent-koi-fill: #e8865c;
-    --accent-koi-on-fill: #13232a;
-    --accent-brass: #d9a94a;
-    --accent-brass-text: #e4b85e;
-    --accent-brass-fill: #d9a94a;
-    --accent-brass-on-fill: #13232a;
-    --accent-kelp: #4fb08a;
-    --accent-kelp-text: #67c39d;
-    --accent-kelp-fill: #4fb08a;
-    --accent-kelp-on-fill: #13232a;
+    --ll-accent-teal: #7fb4c4;
+    --ll-accent-teal-text: #7fb4c4;
+    --ll-accent-teal-fill: #7fb4c4;
+    --ll-accent-teal-on-fill: #13232a;
+    --ll-accent-koi: #e8865c;
+    --ll-accent-koi-text: #f0a07a;
+    --ll-accent-koi-fill: #e8865c;
+    --ll-accent-koi-on-fill: #13232a;
+    --ll-accent-brass: #d9a94a;
+    --ll-accent-brass-text: #e4b85e;
+    --ll-accent-brass-fill: #d9a94a;
+    --ll-accent-brass-on-fill: #13232a;
+    --ll-accent-kelp: #4fb08a;
+    --ll-accent-kelp-text: #67c39d;
+    --ll-accent-kelp-fill: #4fb08a;
+    --ll-accent-kelp-on-fill: #13232a;
     color-scheme: dark;
   }
 }
@@ -180,22 +180,22 @@
     --status-warn-tint: #f5ecd6;
     --status-danger-tint: #f6e2de;
     --status-info-tint: #dfe9ec;
-    --accent-teal: #1d4b5a;
-    --accent-teal-text: #1d4b5a;
-    --accent-teal-fill: #1d4b5a;
-    --accent-teal-on-fill: #f6f3ec;
-    --accent-koi: #d9643a;
-    --accent-koi-text: #b24a24;
-    --accent-koi-fill: #b24a24;
-    --accent-koi-on-fill: #f6f3ec;
-    --accent-brass: #8a5f10;
-    --accent-brass-text: #8a5f10;
-    --accent-brass-fill: #8a5f10;
-    --accent-brass-on-fill: #f6f3ec;
-    --accent-kelp: #2e8a68;
-    --accent-kelp-text: #1f6b50;
-    --accent-kelp-fill: #1f6b50;
-    --accent-kelp-on-fill: #f6f3ec;
+    --ll-accent-teal: #1d4b5a;
+    --ll-accent-teal-text: #1d4b5a;
+    --ll-accent-teal-fill: #1d4b5a;
+    --ll-accent-teal-on-fill: #f6f3ec;
+    --ll-accent-koi: #d9643a;
+    --ll-accent-koi-text: #b24a24;
+    --ll-accent-koi-fill: #b24a24;
+    --ll-accent-koi-on-fill: #f6f3ec;
+    --ll-accent-brass: #8a5f10;
+    --ll-accent-brass-text: #8a5f10;
+    --ll-accent-brass-fill: #8a5f10;
+    --ll-accent-brass-on-fill: #f6f3ec;
+    --ll-accent-kelp: #2e8a68;
+    --ll-accent-kelp-text: #1f6b50;
+    --ll-accent-kelp-fill: #1f6b50;
+    --ll-accent-kelp-on-fill: #f6f3ec;
     color-scheme: light;
   }
 }
@@ -222,28 +222,28 @@
   --ll-gutter-phone: 16px;
   /* Harbor's focus ring and the default accent (the family teal) where no app is named. */
   --focus: var(--sea);
-  --accent: var(--accent-teal);
-  --accent-text: var(--accent-teal-text);
-  --accent-fill: var(--accent-teal-fill);
-  --on-accent: var(--accent-teal-on-fill);
+  --ll-accent: var(--ll-accent-teal);
+  --ll-accent-text: var(--ll-accent-teal-text);
+  --ll-accent-fill: var(--ll-accent-teal-fill);
+  --ll-on-accent: var(--ll-accent-teal-on-fill);
 }
 
-/* Each app's accent, by data-app on the shell (or on <html>). Only --accent* changes; nothing else is repainted. */
+/* Each app's accent, by data-app on the shell (or on <html>). Only --ll-accent* changes; nothing else is repainted. */
 [data-app="coifish"] {
-  --accent: var(--accent-teal);
-  --accent-text: var(--accent-teal-text);
-  --accent-fill: var(--accent-teal-fill);
-  --on-accent: var(--accent-teal-on-fill);
+  --ll-accent: var(--ll-accent-koi);
+  --ll-accent-text: var(--ll-accent-koi-text);
+  --ll-accent-fill: var(--ll-accent-koi-fill);
+  --ll-on-accent: var(--ll-accent-koi-on-fill);
 }
 [data-app="reelminder"] {
-  --accent: var(--accent-brass);
-  --accent-text: var(--accent-brass-text);
-  --accent-fill: var(--accent-brass-fill);
-  --on-accent: var(--accent-brass-on-fill);
+  --ll-accent: var(--ll-accent-brass);
+  --ll-accent-text: var(--ll-accent-brass-text);
+  --ll-accent-fill: var(--ll-accent-brass-fill);
+  --ll-on-accent: var(--ll-accent-brass-on-fill);
 }
 [data-app="packetskipper"] {
-  --accent: var(--accent-kelp);
-  --accent-text: var(--accent-kelp-text);
-  --accent-fill: var(--accent-kelp-fill);
-  --on-accent: var(--accent-kelp-on-fill);
+  --ll-accent: var(--ll-accent-kelp);
+  --ll-accent-text: var(--ll-accent-kelp-text);
+  --ll-accent-fill: var(--ll-accent-kelp-fill);
+  --ll-on-accent: var(--ll-accent-kelp-on-fill);
 }

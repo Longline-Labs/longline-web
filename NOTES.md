@@ -42,15 +42,17 @@ The fixed statuses (never repainted): ok / current #1e6f7a (#6dc4cf dark), warn 
 #8a5f10 (#e4b85e), danger / expired #a63a2e (#ef8b7d), each on its own tint; "Pending review" on
 coifish.com is the family teal on `sea-tint`, kept here as `status-info`.
 
-## Decision taken here, and the one to confirm
+## The accent decision
 
 The brief for this package puts the accent on the primary button, the active nav item and link hover,
-the favicon, the switcher tile and a stripe in the top bar, and says Coifish keeps its teal. So
-`apps.json` records Coifish's accent as **`teal`** (Harbor's `sea`), which keeps coifish.com looking
-exactly as it does today, and ReelMinder as `brass` and PacketSkipper as `kelp` (their buttons will
-turn from teal to their own colour when their sites move onto this shell). Harbor's `koi` is kept in
-`tokens/tokens.json` as a ready accent: if Brandon would rather Coifish's buttons go rust to match its
-fish, change `"accent": "teal"` to `"koi"` for Coifish in `apps.json`, run `npm test`, and nothing else.
+the favicon, the switcher tile and a stripe in the top bar. Brandon decided (October 30, 2026) that
+each app's accent is its Harbor brand colour and teal stays the family colour: so `apps.json` records
+Coifish as **`koi`** (rust, as drawn in its fish), ReelMinder as `brass` and PacketSkipper as `kelp`.
+On coifish.com that turns the header, hero and pricing buttons from teal to rust; links, the kicker,
+focus rings and everything else stay the family teal. The `teal` accent is kept in
+`tokens/tokens.json` for a site with no colour of its own. By day the rust button is `koi-deep`
+(#b24a24), since the fish's #d9643a reads only 3.25:1 on paper: enough for the stripe and the tile,
+not for a label on a fill.
 
 ## Logos
 

@@ -102,17 +102,19 @@ and it appears in exactly these places:
 
 | Allowed | Token | Must pass |
 |---|---|---|
-| The 3px stripe along the top of the header | `--accent` | 3:1 against paper and paper-raised |
-| The ring on the app's tile in the switcher | `--accent` | 3:1 |
-| The active nav item, and any link on hover | `--accent-text` | 4.5:1 against paper and paper-raised |
-| The one primary button (header, hero, pricing) | `--accent-fill` with `--on-accent` text | 4.5:1 label on fill, 3:1 fill against paper |
+| The 3px stripe along the top of the header | `--ll-accent` | 3:1 against paper and paper-raised |
+| The ring on the app's tile in the switcher | `--ll-accent` | 3:1 |
+| The active nav item, and any link on hover | `--ll-accent-text` | 4.5:1 against paper and paper-raised |
+| The one primary button (header, hero, pricing) | `--ll-accent-fill` with `--ll-on-accent` text | 4.5:1 label on fill, 3:1 fill against paper |
 | The favicon | the app's mark | (a logo; exempt) |
 
-Nowhere else: not on headings, kickers, cards, backgrounds, borders or status badges. The status
+Nowhere else: not on headings, kickers, cards, backgrounds, borders or status badges. The variables are
+namespaced (`--ll-accent`, `--ll-accent-text`, `--ll-accent-fill`, `--ll-on-accent`) so they never collide with a
+site's own `--accent`, which on all three sites today is the family teal. The status
 colours (`--status-ok`, `--status-warn`, `--status-danger`, `--status-info` and their tints) are the same
 on every site and mean the same thing: current, expiring soon, expired, pending review.
 
-Where a brand colour is too light for a role by day (ReelMinder's brass), the role takes the deeper
+Where a brand colour is too light for a role by day (ReelMinder's brass, Coifish's rust on a button), the role takes the deeper
 value of the same colour; the hex pairs are in `tokens/tokens.json` under `accents`, and
 `npm run check:contrast` prints every pairing with its ratio.
 

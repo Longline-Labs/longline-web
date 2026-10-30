@@ -21,7 +21,7 @@ function mode(name) {
   const accents = Object.fromEntries(
     Object.entries(tokens.accents)
       .filter(([k]) => !k.startsWith("_"))
-      .flatMap(([key, a]) => Object.entries(a[name]).map(([role, v]) => [`accent-${key}${role === "accent" ? "" : `-${role}`}`, v])),
+      .flatMap(([key, a]) => Object.entries(a[name]).map(([role, v]) => [`ll-accent-${key}${role === "accent" ? "" : `-${role}`}`, v])),
   );
   return [props(tokens.base[name]), props(tokens.status[name]), props(accents), `  color-scheme: ${name};`].join("\n");
 }
@@ -33,10 +33,10 @@ const scale = (name, obj) => Object.entries(obj).map(([k, v]) => `  --${name}-${
 
 const appAccent = (app) =>
   `[data-app="${app.key}"] {
-  --accent: var(--accent-${app.accent});
-  --accent-text: var(--accent-${app.accent}-text);
-  --accent-fill: var(--accent-${app.accent}-fill);
-  --on-accent: var(--accent-${app.accent}-on-fill);
+  --ll-accent: var(--ll-accent-${app.accent});
+  --ll-accent-text: var(--ll-accent-${app.accent}-text);
+  --ll-accent-fill: var(--ll-accent-${app.accent}-fill);
+  --ll-on-accent: var(--ll-accent-${app.accent}-on-fill);
 }`;
 
 export const css = `/* Longline Labs web tokens. Generated from tokens/tokens.json and apps.json by scripts/build-tokens.mjs;
@@ -77,13 +77,13 @@ ${scale("radius", tokens.radius)}
 ${scale("ll", tokens.layout)}
   /* Harbor's focus ring and the default accent (the family teal) where no app is named. */
   --focus: var(--sea);
-  --accent: var(--accent-teal);
-  --accent-text: var(--accent-teal-text);
-  --accent-fill: var(--accent-teal-fill);
-  --on-accent: var(--accent-teal-on-fill);
+  --ll-accent: var(--ll-accent-teal);
+  --ll-accent-text: var(--ll-accent-teal-text);
+  --ll-accent-fill: var(--ll-accent-teal-fill);
+  --ll-on-accent: var(--ll-accent-teal-on-fill);
 }
 
-/* Each app's accent, by data-app on the shell (or on <html>). Only --accent* changes; nothing else is repainted. */
+/* Each app's accent, by data-app on the shell (or on <html>). Only --ll-accent* changes; nothing else is repainted. */
 ${family.apps.map(appAccent).join("\n")}
 `;
 
