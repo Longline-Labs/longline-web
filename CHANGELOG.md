@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.3 — 2026-10-30
+
+- Descriptions for BallastBook, ShipShape and Aboveboard, as Brandon wrote them. No placeholders remain.
+
 ## 0.3.2 — 2026-10-30
 
 - **The final approved package** (`brand/longline-labs-approved-brand-package`) is the source of truth. Marks are

@@ -38,7 +38,7 @@ which is what the shell shows.
 - `switcher`: whether the header's switcher lists it (all six today).
 - `domain` / `url`: coifish.com, reelminders.com, packetskipper.com, ballastbook.com, shipshapefiles.com,
   aboveboarddocs.com. A coming-soon app's domain is recorded but not linked until it goes live.
-  **Placeholder:** none of the three new apps has a one-line `description` yet; the line stays blank until written.
+- `description`: the one line under the name in the switcher and the family section, as Brandon wrote them.
 
 The two sites already built (reelminders.com, packetskipper.com) still render through the shell; the switcher
 simply treats them as coming soon until their status flips.
