@@ -5,7 +5,7 @@
     "_note": "`name` is the brand beside every wordmark; `legalName` is what every site's copyright line says (the shared footer reads it, and no site may override it).",
     "familyLine": "Apps for community association managers, built to work the same way."
   },
-  "_note": "The family, in the order of the six-colour longline. `status` is \"live\" (the site is up: the switcher and the family section link to it) or \"coming-soon\" (shown with its mark and accent, labelled Coming soon, not linked). Flip one word to launch. `switcher` says whether the header's switcher lists the app at all. `domain` is null where none has been decided; `description` is null until the founder writes the line.",
+  "_note": "The family, in the order of the six-colour longline. `status` is \"live\" (the site is up: the switcher and the family section link to it) or \"coming-soon\" (shown with its mark and accent, labelled Coming soon, not linked). Flip one word to launch. `switcher` says whether the header's switcher lists the app at all. `description` is null until the founder writes the line. Domains as decided October 30, 2026: ballastbook.com, shipshapefiles.com (the product is ShipShape), aboveboarddocs.com.",
   "apps": [
     {
       "key": "coifish",
@@ -43,8 +43,8 @@
     {
       "key": "ballastbook",
       "name": "BallastBook",
-      "domain": null,
-      "url": null,
+      "domain": "ballastbook.com",
+      "url": "https://ballastbook.com",
       "appUrl": null,
       "accent": "cobalt",
       "status": "coming-soon",
@@ -65,8 +65,8 @@
     {
       "key": "aboveboard",
       "name": "Aboveboard",
-      "domain": null,
-      "url": null,
+      "domain": "aboveboarddocs.com",
+      "url": "https://aboveboarddocs.com",
       "appUrl": null,
       "accent": "azure",
       "status": "coming-soon",

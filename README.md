@@ -33,9 +33,9 @@ automatically.
   the family section; a coming-soon app shows its mark and accent with a "Coming soon" label, is not a link,
   and announces itself as "Name, coming soon". **To launch an app, change that one word.**
 - `switcher`: whether the header's switcher lists it (all six today).
-- `domain` / `url`: null where none has been decided. **Placeholders:** BallastBook and Aboveboard have no
-  domain anywhere in the suite yet, and none of the three new apps has a one-line `description`; both show
-  as blank until written.
+- `domain` / `url`: coifish.com, reelminders.com, packetskipper.com, ballastbook.com, shipshapefiles.com,
+  aboveboarddocs.com. A coming-soon app's domain is recorded but not linked until it goes live.
+  **Placeholder:** none of the three new apps has a one-line `description` yet; the line stays blank until written.
 
 The two sites already built (reelminders.com, packetskipper.com) still render through the shell; the switcher
 simply treats them as coming soon until their status flips.

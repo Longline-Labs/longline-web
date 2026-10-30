@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.1 — 2026-10-30
+
+- Domains for BallastBook (ballastbook.com) and Aboveboard (aboveboarddocs.com), recorded for when they go live; still
+  unlinked while coming soon. Only the three new apps' descriptions remain open.
+
 ## 0.3.0 — 2026-10-30
 
 - **The approved brand package** (`brand/longline-labs-complete-brand-package`): the Linked LL is the company
