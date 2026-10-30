@@ -890,6 +890,7 @@ a.ll-switcher-app:hover {
 .ll-family-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr; /* every row as tall as the tallest card, so all six boxes are one size */
   gap: var(--space-4);
   margin: var(--space-5) 0 0;
   padding: 0;

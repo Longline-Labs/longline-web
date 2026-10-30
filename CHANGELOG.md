@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.6 — 2026-10-30
+
+- Family section: every card is the same height. The grid's rows were each sized to their own tallest card, so with
+  the longer 0.4.5 descriptions the second row came out shorter than the first (Brandon). `grid-auto-rows: 1fr`.
+
 ## 0.4.5 — 2026-10-30
 
 - The six app descriptions in `apps.json` rewritten as Brandon gave them on October 30, 2026: a sentence or two each on
