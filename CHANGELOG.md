@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.4 — 2026-10-30
+
+- On desktop the Linked LL sits in its own 56px corner cell at the far left of the header, directly above the rail,
+  and the app's lockup starts where the page column starts (Brandon). On phones it stays beside the wordmark.
+- 0.4.3 was tagged with the header markup for this but without its styles; use 0.4.4.
+
 ## 0.4.2 — 2026-10-30
 
 - The Linked LL in the header is drawn in the mark ink (teal by day, cream by night) at 28px, the same as the app

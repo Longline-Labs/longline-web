@@ -318,9 +318,36 @@ a.ll-rail-app:hover {
   position: sticky;
   top: 0;
   z-index: 40;
+  display: flex;
   background: var(--paper-raised);
   border-top: 3px solid var(--ll-accent);
   border-bottom: 1px solid var(--hairline);
+}
+
+.ll-header-main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* The corner above the rail: the Linked LL in its own 56px cell with the rail's edge. Shown only where the rail is. */
+.ll-corner {
+  display: none;
+  flex: none;
+  width: 56px;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--hairline);
+  color: var(--mark-ink);
+}
+
+@media (min-width: 900px) {
+  .ll-header-with-rail .ll-corner {
+    display: flex;
+  }
+  .ll-header-with-rail .ll-brand-company,
+  .ll-header-with-rail .ll-brand-divider {
+    display: none;
+  }
 }
 
 .ll-header-row {
