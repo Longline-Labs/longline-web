@@ -1,5 +1,6 @@
-export { apps, appByKey, company, type AppKey, type AccentKey, type FamilyApp, type Company } from "./apps";
-export { Mark, CoifishMark, ReelMinderMark, PacketSkipperMark, LonglineMark, LonglineWordmark } from "./marks";
+export { apps, switcherApps, appByKey, isLive, company, type AppKey, type AccentKey, type AppStatus, type FamilyApp, type Company } from "./apps";
+export { Mark, CoifishMark, ReelMinderMark, PacketSkipperMark, BallastBookMark, ShipShapeMark, AboveboardMark, LonglineMark, LonglineWordmark, LonglineIllustration } from "./marks";
+export { FamilySection } from "./FamilySection";
 export { DEFAULT_THEME_KEY, THEME_CHANGED_EVENT, readTheme, themeInUse, themeScript, type Theme } from "./theme";
 export { ThemeToggle } from "./ThemeToggle";
 export { AppSwitcher } from "./AppSwitcher";

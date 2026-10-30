@@ -56,12 +56,17 @@ not for a label on a fill.
 
 ## Logos
 
-No Longline Labs logo exists anywhere: searched the whole suite folder on October 30, 2026 (brand/, both
-Harbor kits in the zips, every repo's public and src folders, backups, research, overnight), for SVG,
-PNG, Figma, AI, Sketch or PDF files named or containing "longline", "double L" or "monogram". The brand
-folder has only the three app marks and Coifish's Stripe branding; `legal/` has the Articles of
-Amendment. `LonglineMark` and `logos/longline-mark-draft*.svg` are therefore a draft from Brandon's
-description, flagged in the README. The three app marks are the approved Option 2 files, byte for byte.
+Until the afternoon of October 30, 2026 no Longline Labs logo existed anywhere in the suite, and the package
+carried first a placeholder (Harbor's ring and dot), then a draft. That afternoon Brandon supplied
+`brand/approved-five-app-brand-package` and then `brand/longline-labs-complete-brand-package`, which
+supersedes it; the package now uses the complete one: the Linked LL company mark, six app marks (the first
+three byte-identical to the Option 2 files already in use), the six-colour longline and `palette.json`.
+Naming: the package's handoff calls the fifth app ShipShapeFiles; Brandon confirmed the product name is
+ShipShape and shipshapefiles.com is only its domain, so the display name is ShipShape and the key and files
+stay `shipshapefiles`. No repo uses the name AboveboardDocs. Dark reconciliation: palette.json's
+dark_illustration_accent for the first three (#e8865c, #d9a94a, #4fb08a) is exactly what Harbor's tokens.css
+had as those apps' dark accents, so the UI roles were already right; what was new is that the mark keeps its
+day colour at night, which the inline marks already did by drawing the brand hex.
 
 ## What each site dropped to reach parity (October 30, 2026)
 

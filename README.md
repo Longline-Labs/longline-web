@@ -17,13 +17,28 @@ Each site changes exactly three things: its wordmark, its copy, and one accent c
 - `NOTES.md` records what the three sites were built with before this package and what moving the
   other two takes.
 
-> **Draft logo, awaiting Brandon's real asset.** No Longline Labs logo exists in any repo or in the
-> brand folder (searched October 30, 2026). `LonglineMark` and `logos/longline-mark-draft*.svg` are a
-> draft drawn from his description: a double-L monogram over a longline, one main line with three short
-> branch lines, each ending in a dot in one app's accent (rust, brass, kelp). It is in the header, the
-> switcher's title and the footer on every site, so he can judge it in place. When the real mark
-> arrives, replace the drawing in `src/marks.tsx` and the three SVG files, and nothing else changes.
-> The SVG files are also the base for a Longline Labs favicon; each app's own favicon stays its own mark.
+The marks are the approved ones from `brand/longline-labs-complete-brand-package` (October 30, 2026):
+the Linked LL for Longline Labs, and the six app marks, as inline SVG with the files' geometry exactly
+(`src/marks.tsx`) and as the files themselves in `logos/` (default, dark and mono), which are also the base
+for favicons. The six-colour longline (`illustration/`, `LonglineIllustration`) is a supporting graphic: it
+appears in `FamilySection`, never in the header and never as a favicon, and apps are not added to it
+automatically.
+
+## The family: six apps, one live
+
+`apps.json` lists the apps in longline order: Coifish, ReelMinder, PacketSkipper, BallastBook, ShipShape
+(its domain is shipshapefiles.com, so its key and mark files say `shipshapefiles`), Aboveboard. Each has:
+
+- `status`: `"live"` or `"coming-soon"`. Only Coifish is live. A live app is linked from the switcher and
+  the family section; a coming-soon app shows its mark and accent with a "Coming soon" label, is not a link,
+  and announces itself as "Name, coming soon". **To launch an app, change that one word.**
+- `switcher`: whether the header's switcher lists it (all six today).
+- `domain` / `url`: null where none has been decided. **Placeholders:** BallastBook and Aboveboard have no
+  domain anywhere in the suite yet, and none of the three new apps has a one-line `description`; both show
+  as blank until written.
+
+The two sites already built (reelminders.com, packetskipper.com) still render through the shell; the switcher
+simply treats them as coming soon until their status flips.
 
 ## Consuming it
 
@@ -160,6 +175,12 @@ and it appears in exactly these places:
 | The active nav item, and any link on hover | `--ll-accent-text` | 4.5:1 against paper and paper-raised |
 | The one primary button (header, hero, pricing) | `--ll-accent-fill` with `--ll-on-accent` text | 4.5:1 label on fill, 3:1 fill against paper |
 | The favicon | the app's mark | (a logo; exempt) |
+| The accent stroke inside the app's mark (`--ll-accent-<key>-mark`) and its dot in the longline (`-illustration`) | from the brand package's palette.json | reported, not failed: brand assets |
+
+In dark mode the first three apps keep their day colour inside the mark (#d9643a, #c6912c, #2e8a68) and take
+the lighter night value only in the illustration (#e8865c, #d9a94a, #4fb08a); the three newer apps take the
+night value for both. The UI roles (stripe, button, active link) use the night values, which are what Harbor
+already called those apps' dark accents.
 
 Nowhere else: not on headings, kickers, cards, backgrounds, borders or status badges. The variables are
 namespaced (`--ll-accent`, `--ll-accent-text`, `--ll-accent-fill`, `--ll-on-accent`) so they never collide with a
@@ -167,7 +188,7 @@ site's own `--accent`, which on all three sites today is the family teal. The st
 colours (`--status-ok`, `--status-warn`, `--status-danger`, `--status-info` and their tints) are the same
 on every site and mean the same thing: current, expiring soon, expired, pending review.
 
-Where a brand colour is too light for a role by day (ReelMinder's brass, Coifish's rust on a button), the role takes the deeper
+Where a brand colour is too light for a role by day (ReelMinder's brass, Coifish's rust on a button, Aboveboard's azure as text), the role takes a deeper
 value of the same colour; the hex pairs are in `tokens/tokens.json` under `accents`, and
 `npm run check:contrast` prints every pairing with its ratio.
 

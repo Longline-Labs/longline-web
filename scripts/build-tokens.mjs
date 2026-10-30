@@ -51,6 +51,7 @@ const appAccent = (app) =>
   --ll-accent-text: var(--ll-accent-${app.accent}-text);
   --ll-accent-fill: var(--ll-accent-${app.accent}-fill);
   --ll-on-accent: var(--ll-accent-${app.accent}-on-fill);
+  --ll-mark-accent: var(--ll-accent-${app.accent}-mark);
 }`;
 
 export const css = `/* Longline Labs web tokens. Generated from tokens/tokens.json and apps.json by scripts/build-tokens.mjs;

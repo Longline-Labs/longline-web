@@ -36,18 +36,44 @@
   --ll-accent-teal-text: #1d4b5a;
   --ll-accent-teal-fill: #1d4b5a;
   --ll-accent-teal-on-fill: #f6f3ec;
+  --ll-accent-teal-mark: #1d4b5a;
+  --ll-accent-teal-illustration: #1d4b5a;
   --ll-accent-koi: #d9643a;
   --ll-accent-koi-text: #b24a24;
   --ll-accent-koi-fill: #b24a24;
   --ll-accent-koi-on-fill: #f6f3ec;
+  --ll-accent-koi-mark: #d9643a;
+  --ll-accent-koi-illustration: #d9643a;
   --ll-accent-brass: #8a5f10;
   --ll-accent-brass-text: #8a5f10;
   --ll-accent-brass-fill: #8a5f10;
   --ll-accent-brass-on-fill: #f6f3ec;
+  --ll-accent-brass-mark: #c6912c;
+  --ll-accent-brass-illustration: #c6912c;
   --ll-accent-kelp: #2e8a68;
   --ll-accent-kelp-text: #1f6b50;
   --ll-accent-kelp-fill: #1f6b50;
   --ll-accent-kelp-on-fill: #f6f3ec;
+  --ll-accent-kelp-mark: #2e8a68;
+  --ll-accent-kelp-illustration: #2e8a68;
+  --ll-accent-cobalt: #4b63a6;
+  --ll-accent-cobalt-text: #4b63a6;
+  --ll-accent-cobalt-fill: #4b63a6;
+  --ll-accent-cobalt-on-fill: #f6f3ec;
+  --ll-accent-cobalt-mark: #4b63a6;
+  --ll-accent-cobalt-illustration: #4b63a6;
+  --ll-accent-plum: #8c4f86;
+  --ll-accent-plum-text: #8c4f86;
+  --ll-accent-plum-fill: #8c4f86;
+  --ll-accent-plum-on-fill: #f6f3ec;
+  --ll-accent-plum-mark: #8c4f86;
+  --ll-accent-plum-illustration: #8c4f86;
+  --ll-accent-azure: #3786b0;
+  --ll-accent-azure-text: #2d6e93;
+  --ll-accent-azure-fill: #2d6e93;
+  --ll-accent-azure-on-fill: #f6f3ec;
+  --ll-accent-azure-mark: #3786b0;
+  --ll-accent-azure-illustration: #3786b0;
   color-scheme: light;
 }
 
@@ -84,18 +110,44 @@
   --ll-accent-teal-text: #7fb4c4;
   --ll-accent-teal-fill: #7fb4c4;
   --ll-accent-teal-on-fill: #13232a;
+  --ll-accent-teal-mark: #e9e4d8;
+  --ll-accent-teal-illustration: #e9e4d8;
   --ll-accent-koi: #e8865c;
   --ll-accent-koi-text: #f0a07a;
   --ll-accent-koi-fill: #e8865c;
   --ll-accent-koi-on-fill: #13232a;
+  --ll-accent-koi-mark: #d9643a;
+  --ll-accent-koi-illustration: #e8865c;
   --ll-accent-brass: #d9a94a;
   --ll-accent-brass-text: #e4b85e;
   --ll-accent-brass-fill: #d9a94a;
   --ll-accent-brass-on-fill: #13232a;
+  --ll-accent-brass-mark: #c6912c;
+  --ll-accent-brass-illustration: #d9a94a;
   --ll-accent-kelp: #4fb08a;
   --ll-accent-kelp-text: #67c39d;
   --ll-accent-kelp-fill: #4fb08a;
   --ll-accent-kelp-on-fill: #13232a;
+  --ll-accent-kelp-mark: #2e8a68;
+  --ll-accent-kelp-illustration: #4fb08a;
+  --ll-accent-cobalt: #8aa0e0;
+  --ll-accent-cobalt-text: #8aa0e0;
+  --ll-accent-cobalt-fill: #8aa0e0;
+  --ll-accent-cobalt-on-fill: #13232a;
+  --ll-accent-cobalt-mark: #8aa0e0;
+  --ll-accent-cobalt-illustration: #8aa0e0;
+  --ll-accent-plum: #c993c2;
+  --ll-accent-plum-text: #c993c2;
+  --ll-accent-plum-fill: #c993c2;
+  --ll-accent-plum-on-fill: #13232a;
+  --ll-accent-plum-mark: #c993c2;
+  --ll-accent-plum-illustration: #c993c2;
+  --ll-accent-azure: #79b9d8;
+  --ll-accent-azure-text: #79b9d8;
+  --ll-accent-azure-fill: #79b9d8;
+  --ll-accent-azure-on-fill: #13232a;
+  --ll-accent-azure-mark: #79b9d8;
+  --ll-accent-azure-illustration: #79b9d8;
   color-scheme: dark;
 }
 
@@ -133,18 +185,44 @@
     --ll-accent-teal-text: #7fb4c4;
     --ll-accent-teal-fill: #7fb4c4;
     --ll-accent-teal-on-fill: #13232a;
+    --ll-accent-teal-mark: #e9e4d8;
+    --ll-accent-teal-illustration: #e9e4d8;
     --ll-accent-koi: #e8865c;
     --ll-accent-koi-text: #f0a07a;
     --ll-accent-koi-fill: #e8865c;
     --ll-accent-koi-on-fill: #13232a;
+    --ll-accent-koi-mark: #d9643a;
+    --ll-accent-koi-illustration: #e8865c;
     --ll-accent-brass: #d9a94a;
     --ll-accent-brass-text: #e4b85e;
     --ll-accent-brass-fill: #d9a94a;
     --ll-accent-brass-on-fill: #13232a;
+    --ll-accent-brass-mark: #c6912c;
+    --ll-accent-brass-illustration: #d9a94a;
     --ll-accent-kelp: #4fb08a;
     --ll-accent-kelp-text: #67c39d;
     --ll-accent-kelp-fill: #4fb08a;
     --ll-accent-kelp-on-fill: #13232a;
+    --ll-accent-kelp-mark: #2e8a68;
+    --ll-accent-kelp-illustration: #4fb08a;
+    --ll-accent-cobalt: #8aa0e0;
+    --ll-accent-cobalt-text: #8aa0e0;
+    --ll-accent-cobalt-fill: #8aa0e0;
+    --ll-accent-cobalt-on-fill: #13232a;
+    --ll-accent-cobalt-mark: #8aa0e0;
+    --ll-accent-cobalt-illustration: #8aa0e0;
+    --ll-accent-plum: #c993c2;
+    --ll-accent-plum-text: #c993c2;
+    --ll-accent-plum-fill: #c993c2;
+    --ll-accent-plum-on-fill: #13232a;
+    --ll-accent-plum-mark: #c993c2;
+    --ll-accent-plum-illustration: #c993c2;
+    --ll-accent-azure: #79b9d8;
+    --ll-accent-azure-text: #79b9d8;
+    --ll-accent-azure-fill: #79b9d8;
+    --ll-accent-azure-on-fill: #13232a;
+    --ll-accent-azure-mark: #79b9d8;
+    --ll-accent-azure-illustration: #79b9d8;
     color-scheme: dark;
   }
 }
@@ -185,18 +263,44 @@
     --ll-accent-teal-text: #1d4b5a;
     --ll-accent-teal-fill: #1d4b5a;
     --ll-accent-teal-on-fill: #f6f3ec;
+    --ll-accent-teal-mark: #1d4b5a;
+    --ll-accent-teal-illustration: #1d4b5a;
     --ll-accent-koi: #d9643a;
     --ll-accent-koi-text: #b24a24;
     --ll-accent-koi-fill: #b24a24;
     --ll-accent-koi-on-fill: #f6f3ec;
+    --ll-accent-koi-mark: #d9643a;
+    --ll-accent-koi-illustration: #d9643a;
     --ll-accent-brass: #8a5f10;
     --ll-accent-brass-text: #8a5f10;
     --ll-accent-brass-fill: #8a5f10;
     --ll-accent-brass-on-fill: #f6f3ec;
+    --ll-accent-brass-mark: #c6912c;
+    --ll-accent-brass-illustration: #c6912c;
     --ll-accent-kelp: #2e8a68;
     --ll-accent-kelp-text: #1f6b50;
     --ll-accent-kelp-fill: #1f6b50;
     --ll-accent-kelp-on-fill: #f6f3ec;
+    --ll-accent-kelp-mark: #2e8a68;
+    --ll-accent-kelp-illustration: #2e8a68;
+    --ll-accent-cobalt: #4b63a6;
+    --ll-accent-cobalt-text: #4b63a6;
+    --ll-accent-cobalt-fill: #4b63a6;
+    --ll-accent-cobalt-on-fill: #f6f3ec;
+    --ll-accent-cobalt-mark: #4b63a6;
+    --ll-accent-cobalt-illustration: #4b63a6;
+    --ll-accent-plum: #8c4f86;
+    --ll-accent-plum-text: #8c4f86;
+    --ll-accent-plum-fill: #8c4f86;
+    --ll-accent-plum-on-fill: #f6f3ec;
+    --ll-accent-plum-mark: #8c4f86;
+    --ll-accent-plum-illustration: #8c4f86;
+    --ll-accent-azure: #3786b0;
+    --ll-accent-azure-text: #2d6e93;
+    --ll-accent-azure-fill: #2d6e93;
+    --ll-accent-azure-on-fill: #f6f3ec;
+    --ll-accent-azure-mark: #3786b0;
+    --ll-accent-azure-illustration: #3786b0;
     color-scheme: light;
   }
 }
@@ -290,16 +394,40 @@
   --ll-accent-text: var(--ll-accent-koi-text);
   --ll-accent-fill: var(--ll-accent-koi-fill);
   --ll-on-accent: var(--ll-accent-koi-on-fill);
+  --ll-mark-accent: var(--ll-accent-koi-mark);
 }
 [data-app="reelminder"] {
   --ll-accent: var(--ll-accent-brass);
   --ll-accent-text: var(--ll-accent-brass-text);
   --ll-accent-fill: var(--ll-accent-brass-fill);
   --ll-on-accent: var(--ll-accent-brass-on-fill);
+  --ll-mark-accent: var(--ll-accent-brass-mark);
 }
 [data-app="packetskipper"] {
   --ll-accent: var(--ll-accent-kelp);
   --ll-accent-text: var(--ll-accent-kelp-text);
   --ll-accent-fill: var(--ll-accent-kelp-fill);
   --ll-on-accent: var(--ll-accent-kelp-on-fill);
+  --ll-mark-accent: var(--ll-accent-kelp-mark);
+}
+[data-app="ballastbook"] {
+  --ll-accent: var(--ll-accent-cobalt);
+  --ll-accent-text: var(--ll-accent-cobalt-text);
+  --ll-accent-fill: var(--ll-accent-cobalt-fill);
+  --ll-on-accent: var(--ll-accent-cobalt-on-fill);
+  --ll-mark-accent: var(--ll-accent-cobalt-mark);
+}
+[data-app="shipshapefiles"] {
+  --ll-accent: var(--ll-accent-plum);
+  --ll-accent-text: var(--ll-accent-plum-text);
+  --ll-accent-fill: var(--ll-accent-plum-fill);
+  --ll-on-accent: var(--ll-accent-plum-on-fill);
+  --ll-mark-accent: var(--ll-accent-plum-mark);
+}
+[data-app="aboveboard"] {
+  --ll-accent: var(--ll-accent-azure);
+  --ll-accent-text: var(--ll-accent-azure-text);
+  --ll-accent-fill: var(--ll-accent-azure-fill);
+  --ll-on-accent: var(--ll-accent-azure-on-fill);
+  --ll-mark-accent: var(--ll-accent-azure-mark);
 }

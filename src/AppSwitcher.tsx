@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { apps, company, type AppKey } from "./apps";
+import { company, isLive, switcherApps, type AppKey } from "./apps";
 import { LonglineWordmark, Mark } from "./marks";
 
 /**
- * The app switcher: a button in the header that opens the whole family, one row per app with its mark
- * on a tile in the app's accent, its name, its one-line description and a link to its domain. The app
- * whose site this is says "You are here". A <details>, so it works before any script runs; the script
- * only closes it on Escape or a click elsewhere.
+ * The app switcher: a button in the header that opens the family, one row per app (apps.json order) with its mark
+ * on a tile ringed in the app's accent, its name and its line. A live app links to its domain; an app that isn't
+ * live yet is a plain entry labelled "Coming soon", with that in its accessible name, and is not interactive. The
+ * app whose site this is says "You are here". A <details>, so it works before any script runs; the script only
+ * closes it on Escape or a click elsewhere.
  */
 export function AppSwitcher({ current, label = "Apps" }: { current: AppKey; label?: string }) {
   const ref = useRef<HTMLDetailsElement>(null);
@@ -29,15 +30,7 @@ export function AppSwitcher({ current, label = "Apps" }: { current: AppKey; labe
     <details ref={ref} className="ll-switcher">
       <summary className="ll-switcher-button" aria-label={`${company.name} apps`} title={`${company.name} apps`}>
         <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="currentColor">
-          <circle cx="4" cy="4" r="2" />
-          <circle cx="10" cy="4" r="2" />
-          <circle cx="16" cy="4" r="2" />
-          <circle cx="4" cy="10" r="2" />
-          <circle cx="10" cy="10" r="2" />
-          <circle cx="16" cy="10" r="2" />
-          <circle cx="4" cy="16" r="2" />
-          <circle cx="10" cy="16" r="2" />
-          <circle cx="16" cy="16" r="2" />
+          {[4, 10, 16].flatMap((y) => [4, 10, 16].map((x) => <circle key={`${x}-${y}`} cx={x} cy={y} r="2" />))}
         </svg>
         <span className="ll-switcher-label">{label}</span>
       </summary>
@@ -47,8 +40,9 @@ export function AppSwitcher({ current, label = "Apps" }: { current: AppKey; labe
         </p>
         <p className="ll-switcher-line">{company.familyLine}</p>
         <ul className="ll-switcher-list">
-          {apps.map((app) => {
+          {switcherApps.map((app) => {
             const here = app.key === current;
+            const live = isLive(app);
             const body = (
               <>
                 <span className="ll-switcher-tile" aria-hidden="true">
@@ -57,22 +51,23 @@ export function AppSwitcher({ current, label = "Apps" }: { current: AppKey; labe
                 <span className="ll-switcher-text">
                   <span className="ll-switcher-name">
                     {app.name}
-                    {here && <span className="ll-switcher-here">You are here</span>}
-                    {!app.live && !here && <span className="ll-switcher-here">Coming soon</span>}
+                    {here ? <span className="ll-switcher-here">You are here</span> : !live && <span className="ll-switcher-here">Coming soon</span>}
                   </span>
-                  <span className="ll-switcher-desc">{app.description}</span>
-                  <span className="ll-switcher-domain">{app.domain}</span>
+                  {app.description && <span className="ll-switcher-desc">{app.description}</span>}
+                  {live && app.domain && <span className="ll-switcher-domain">{app.domain}</span>}
                 </span>
               </>
             );
             return (
               <li key={app.key} data-app={app.key}>
-                {app.live ? (
+                {live && app.url ? (
                   <a href={app.url} className="ll-switcher-app" aria-current={here ? "page" : undefined}>
                     {body}
                   </a>
                 ) : (
-                  <span className="ll-switcher-app ll-switcher-off">{body}</span>
+                  <span className="ll-switcher-app ll-switcher-off" aria-label={here ? `${app.name}, you are here` : `${app.name}, coming soon`} aria-current={here ? "page" : undefined}>
+                    {body}
+                  </span>
                 )}
               </li>
             );

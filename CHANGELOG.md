@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.0 — 2026-10-30
+
+- **The approved brand package** (`brand/longline-labs-complete-brand-package`): the Linked LL is the company
+  mark in the header, the switcher's title and the footer; the draft and placeholder marks are gone. The six
+  app marks are the package's SVGs exactly, with the accent stroke following palette.json's dark-mark colour.
+- **Six apps** in `apps.json`, in longline order: BallastBook (cobalt), ShipShape (plum; key and files
+  `shipshapefiles`) and Aboveboard (azure) join. Each has a `status` (only Coifish is `live`; the rest are
+  `coming-soon`, shown unlinked with the label) and a `switcher` flag. Domains for BallastBook and Aboveboard
+  and the three new descriptions are placeholders (null).
+- **Accents** carry `mark` and `illustration` colours per mode besides the UI roles; the contrast check covers
+  all six in both modes (142 pairings) and reports the brand assets' ratios without failing on them. Azure's
+  text and button by day are #2d6e93, a deeper step not in the package.
+- **`FamilySection`**: the six-colour longline (`LonglineIllustration`) beside the heading, then a card per app.
+  Replaces each site's own family section.
+
 ## 0.2.0 — 2026-10-30
 
 - **Type and layout parity.** The type scale (`type` in tokens.json: display-xl, display-md, title,

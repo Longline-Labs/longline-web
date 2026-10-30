@@ -63,6 +63,10 @@ for (const mode of tokens.modes) {
       check(group, `primary button fill against ${g}`, a.fill, bg, 3);
     }
     check(group, "primary button label on its fill", a["on-fill"], a.fill, 4.5);
+    // The brand assets as approved: reported for the record (a logo and a decorative graphic are exempt from the
+    // AA rules), never failed, never recoloured here.
+    check(group, "accent stroke of the mark on paper (brand asset, reported only)", a.mark, base.paper, 0);
+    check(group, "dot in the longline illustration on paper (brand asset, reported only)", a.illustration, base.paper, 0);
   }
 }
 
@@ -74,8 +78,8 @@ for (const c of checks) {
     console.log(`\n${c.group}`);
     lastGroup = c.group;
   }
-  const mark = c.ratio >= c.min ? "ok  " : "FAIL";
-  console.log(`  ${mark} ${c.what.padEnd(width - c.group.length)} ${c.fg} on ${c.bg}  ${c.ratio.toFixed(2)}:1 (min ${c.min}:1)`);
+  const mark = c.min === 0 ? "note" : c.ratio >= c.min ? "ok  " : "FAIL";
+  console.log(`  ${mark} ${c.what.padEnd(width - c.group.length)} ${c.fg} on ${c.bg}  ${c.ratio.toFixed(2)}:1${c.min ? ` (min ${c.min}:1)` : ""}`);
 }
 console.log(`\n${checks.length} pairings checked, ${failed.length} below AA.`);
 if (failed.length) process.exit(1);

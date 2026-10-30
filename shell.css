@@ -500,13 +500,13 @@ a.ll-switcher-app:hover {
   box-shadow: inset 0 0 0 2px var(--ll-accent);
 }
 
+/* An app that isn't live yet: its mark and accent ring at full strength, the words quieter, nothing to click. */
 .ll-switcher-off {
-  color: var(--ink-muted);
+  cursor: default;
 }
 
-.ll-switcher-off .ll-switcher-tile {
-  box-shadow: inset 0 0 0 1px var(--hairline);
-  opacity: 0.6;
+.ll-switcher-off .ll-switcher-name {
+  color: var(--ink-muted);
 }
 
 .ll-switcher-text {
@@ -686,4 +686,94 @@ a.ll-switcher-app:hover {
   .ll-skip {
     display: none;
   }
+}
+
+/* The family section (FamilySection): the six-colour longline beside the heading, then a card per app. ------- */
+
+.ll-family-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-5) var(--space-7);
+  flex-wrap: wrap;
+}
+
+.ll-family-head .ll-h2,
+.ll-family-head .ll-section-line {
+  margin-bottom: 0;
+}
+
+.ll-family-head .ll-h2 {
+  margin-bottom: var(--space-1);
+}
+
+.ll-illustration {
+  display: block;
+  color: var(--mark-ink);
+}
+
+.ll-family-illustration {
+  width: 200px;
+  height: auto;
+  flex: none;
+  margin-bottom: calc(-1 * var(--space-3));
+}
+
+.ll-family-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 899px) {
+  .ll-family-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 599px) {
+  .ll-family-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ll-family-illustration {
+    width: 160px;
+    margin-bottom: 0;
+  }
+}
+
+.ll-family-card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--paper-raised);
+}
+
+.ll-family-name {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font: 500 22px / 28px var(--font-display);
+  letter-spacing: -0.005em;
+}
+
+.ll-family-desc {
+  margin: 0;
+  color: var(--ink-muted);
+}
+
+.ll-family-status {
+  margin: 0;
+  color: var(--ink-muted);
+}
+
+.ll-family-status a {
+  color: var(--ll-accent-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
