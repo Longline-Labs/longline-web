@@ -42,7 +42,7 @@ export function Header({ config, children }: { config: ShellConfig; children?: R
     <header className={config.rail !== false ? "ll-header ll-header-with-rail" : "ll-header"}>
       <div className="ll-container ll-header-row">
         <Link href={config.homeHref ?? "/"} className="ll-brand" title={`${name} home`}>
-          <LonglineMark size={26} className="ll-brand-company" />
+          <LonglineMark size={28} className="ll-brand-company" />
           <span className="ll-brand-divider" aria-hidden="true" />
           <Mark app={app.key} size={28} className="ll-brand-mark" />
           <span className="ll-wordmark">{name}</span>

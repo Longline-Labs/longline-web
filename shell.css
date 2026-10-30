@@ -341,8 +341,9 @@ a.ll-rail-app:hover {
   text-decoration: none;
 }
 
+/* The Linked LL in the ink of the approved files: teal by day, cream by night, the same as the app marks' supporting strokes. */
 .ll-brand-company {
-  color: var(--ink-muted);
+  color: var(--mark-ink);
 }
 
 .ll-brand-divider {

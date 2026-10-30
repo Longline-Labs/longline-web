@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.2 — 2026-10-30
+
+- The Linked LL in the header is drawn in the mark ink (teal by day, cream by night) at 28px, the same as the app
+  mark beside it; it had been muted grey and 26px, which read as off (Brandon).
+
 ## 0.4.1 — 2026-10-30
 
 - The header's Apps switcher is hidden where the rail is showing (900px and up), since the rail lists the same apps;
