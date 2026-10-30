@@ -1,0 +1,8 @@
+{
+  "_note": "The sites that consume the shell, as scripts/check-sites.mjs finds them from this folder. A path that doesn't exist on this machine is skipped with a note (the check still runs in CI on the package alone); a path that exists is read and must define none of the shell's type or layout variables, style none of its ll- classes, and name no font by hand.",
+  "sites": [
+    { "name": "coifish.com", "css": ["../../apps/Coifish/src/app/globals.css"] },
+    { "name": "reelminders.com", "css": ["../../apps/ReelMinder/site/app/site.css", "../../apps/ReelMinder/site/app/layers.css"] },
+    { "name": "packetskipper.com", "css": ["../../apps/PacketSkipper/src/app/globals.css"] }
+  ]
+}

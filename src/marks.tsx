@@ -59,16 +59,41 @@ export function PacketSkipperMark({ size = 28, title, className }: Props) {
 }
 
 /**
- * PLACEHOLDER. No Longline Labs logo exists yet in any repo or in the brand folder. Until Brandon
- * supplies one, this is Harbor's company mark (the ring and dot of coifish-llc-mark.svg), in one ink.
- * Replace the drawing here and the two files logos/longline-mark-placeholder*.svg together.
+ * DRAFT, awaiting Brandon's real asset (no Longline Labs logo exists in any repo or in brand/). Drawn from his
+ * description: a double-L monogram over a longline, one main line with short branch lines hanging from it, each
+ * ending in a dot in one app's accent (rust, brass, kelp; teal is the family's and is not used here). The ink parts
+ * are `currentColor` (--mark-ink), the dots keep their brand colours. The same drawing is logos/longline-mark-draft*.svg.
  */
-export function LonglineMark({ size = 28, title, className }: Props) {
+export function LonglineMark({ size = 28, title, className, mono = false }: Props & { mono?: boolean }) {
+  const dot = (colour: string) => (mono ? "currentColor" : colour);
   return (
-    <svg {...svgProps(size, title, className)} data-placeholder="longline-mark">
-      <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" strokeWidth="3" />
-      <circle cx="24" cy="24" r="4" fill="currentColor" />
+    <svg {...svgProps(size, title, className)} data-draft="longline-mark">
+      <path d="M7 5v23h12" stroke="currentColor" {...stroke} />
+      <path d="M23 5v23h12" stroke="currentColor" {...stroke} />
+      <path d="M5 35h38" stroke="currentColor" fill="none" strokeWidth={2.4} strokeLinecap="round" />
+      <path d="M13 35v5M24 35v5M35 35v5" stroke="currentColor" fill="none" strokeWidth={2} strokeLinecap="round" />
+      <circle cx="13" cy="42.5" r="2.6" fill={dot("#d9643a")} />
+      <circle cx="24" cy="42.5" r="2.6" fill={dot("#c6912c")} />
+      <circle cx="35" cy="42.5" r="2.6" fill={dot("#2e8a68")} />
     </svg>
+  );
+}
+
+/** The Longline Labs lockup: the mark with the name beside it, for the switcher's title and the footer. */
+export function LonglineWordmark({ size = 22, name = "Longline Labs", href, className }: { size?: number; name?: string; href?: string; className?: string }) {
+  const inner = (
+    <>
+      <LonglineMark size={size} />
+      <span className="ll-lockup-name">{name}</span>
+    </>
+  );
+  const cls = className ? `ll-lockup ${className}` : "ll-lockup";
+  return href ? (
+    <a href={href} className={cls}>
+      {inner}
+    </a>
+  ) : (
+    <span className={cls}>{inner}</span>
   );
 }
 

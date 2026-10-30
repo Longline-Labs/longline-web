@@ -12,26 +12,36 @@ Each site changes exactly three things: its wordmark, its copy, and one accent c
   marks, and `themeScript()` for the root layout.
 - `scripts/check-contrast.mjs` fails `npm test` if any accent, in either mode, falls below WCAG AA
   where the rule lets it appear.
+- `scripts/check-sites.mjs` fails `npm test` if a consuming site (listed in `sites.json`) overrides the
+  shell's type or layout: see "Type and layout parity" below.
 - `NOTES.md` records what the three sites were built with before this package and what moving the
   other two takes.
 
-> **Placeholder logo.** No Longline Labs logo exists yet. `LonglineMark` and
-> `logos/longline-mark-placeholder*.svg` are a ring-and-dot stand-in. When the real mark arrives,
-> replace the drawing in `src/marks.tsx` and the two SVG files, and nothing else changes.
+> **Draft logo, awaiting Brandon's real asset.** No Longline Labs logo exists in any repo or in the
+> brand folder (searched October 30, 2026). `LonglineMark` and `logos/longline-mark-draft*.svg` are a
+> draft drawn from his description: a double-L monogram over a longline, one main line with three short
+> branch lines, each ending in a dot in one app's accent (rust, brass, kelp). It is in the header, the
+> switcher's title and the footer on every site, so he can judge it in place. When the real mark
+> arrives, replace the drawing in `src/marks.tsx` and the three SVG files, and nothing else changes.
+> The SVG files are also the base for a Longline Labs favicon; each app's own favicon stays its own mark.
 
 ## Consuming it
 
 All three sites are Next.js (App Router) with React 19, so the components are React and the package
 ships TypeScript source; Next compiles it with the site.
 
-**Local checkout (Coifish, PacketSkipper: the repos sit beside `packages/`):**
+**Local checkout (all three repos sit beside `packages/`; this is what they use today):**
 
 ```json
 "dependencies": { "@longline/web": "file:../../packages/longline-web" }
 ```
 
-**From GitHub (ReelMinder's site builds on Cloudflare, so a path won't do):** once this repo is pushed
-to the Longline-Labs organisation, pin a commit or tag:
+Each app's `.npmrc` has `install-links=true`, so npm copies the package into `node_modules` instead of
+linking it (the components then find the app's own React). After a change here, run
+`rm -rf node_modules/@longline/web && npm install` in the app.
+
+**From GitHub (ReelMinder's site builds on Cloudflare Pages, where the path above won't exist):** before
+its next deploy, push this repo to the Longline-Labs organisation and pin a tag instead:
 
 ```json
 "dependencies": { "@longline/web": "github:Longline-Labs/longline-web#v0.1.0" }
@@ -87,12 +97,55 @@ import { Shell } from "@longline/web";
 `<main>` (give it `id="ll-main"` so the skip link still works). Before an app opens, pass
 `closedNotice: "Opening soon"` and the Sign in link and button are replaced by that text.
 
+`Shell` also takes `switcher: false` in the config for a page that shouldn't promote the other apps (an
+invitation a board member opens). `Header` and `Footer` can be used on their own. The copyright line
+reads `company.legalName` from `apps.json` (LONGLINE LABS LLC) and no site can override it.
+
 The components use no Tailwind classes, so a Tailwind site needs no `@source` for the package. The
 fonts are found by name, or through next/font's variables `--font-fraunces`, `--font-instrument` and
 `--font-plex-mono` when the site serves them itself.
 
 Other stacks (Astro, static HTML): import the two CSS files and build the markup from `shell.css`'s
 classes; the inline `themeScript()` text works in any `<script>`; the marks are in `logos/`.
+
+## Type and layout parity
+
+Every site uses one type scale and one page frame, so moving between them feels like switching tabs.
+Both live in `tokens/tokens.json` (`type` and `layout`) and come out of `tokens.css` as `--ll-*`
+variables, with the classes in `shell.css` that apply them:
+
+| Role | Class | Desktop | Phone (< 768px) |
+|---|---|---|---|
+| Page title / hero headline | `ll-h1`, `ll-display-xl` | Fraunces 500, 44/50, −0.01em | 32/38 |
+| Section title | `ll-h2`, `ll-display-md` | Fraunces 500, 28/34 | 24/30 |
+| Card title | `ll-title` | Instrument Sans 600, 20/28 | |
+| Heading | `ll-heading` | 600, 16/24 | |
+| Lede, section line, kicker | `ll-lede`, `ll-section-line`, `ll-kicker`, `ll-body-lg` | 17/26 (kicker 600, in the family teal) | |
+| Body | `ll-body` (the shell's default) | 15/22 | |
+| Small | `ll-body-sm` | 13/18 | |
+| Label | `ll-label` | 600, 12/16, 0.04em, uppercase | |
+| Figures | `ll-numeral` | IBM Plex Mono 500, 15/22, tabular | |
+
+| Frame | Class / variable | Desktop | Phone |
+|---|---|---|---|
+| Content width and gutter | `ll-container` | 1100px, 24px | 16px |
+| Header | `ll-header` | 64px tall, 3px accent stripe | |
+| Hero | `ll-hero` | two columns 1fr / 1.15fr, 48px apart, 48px above and 64px below | one column, 32 / 40 |
+| Section rhythm | `ll-section`, `ll-section-rule` | 40px below each section; a hairline above with 40px | 32px |
+| Pricing | `ll-pricing-grid` | two equal columns, 16px apart | one column |
+| Sub page | `ll-page-top` | the hero's top padding | |
+
+A site writes its hero as `ll-container ll-hero` with `ll-kicker`, `ll-h1`, `ll-lede` and
+`ll-cta-row`; each section as `ll-container ll-section` (plus `ll-section-rule` for a hairline) with
+`ll-h2` and, where it has one, `ll-section-line`; the pricing block as `ll-pricing-grid`. Everything
+inside those (mockups, steps, tables, forms) is the site's own.
+
+**The rule, and the check.** A site defines none of `--font-display`, `--font-sans`, `--font-mono`,
+`--space-*` or any `--ll-*` variable (a pass-through such as `--font-sans: var(--font-sans)`, which
+Tailwind's `@theme inline` needs, is allowed), restyles no `ll-` class (styling its own element inside
+one, such as `.ll-hero .notify`, is fine), and names no font by hand. `npm run check:sites` reads the
+stylesheets listed in `sites.json` and fails on any of those; a path that isn't on the machine is
+skipped, so the check also runs where only the package is checked out.
 
 ## The accent rule
 

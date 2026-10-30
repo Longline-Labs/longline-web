@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { apps, company, type AppKey } from "./apps";
-import { Mark } from "./marks";
+import { LonglineWordmark, Mark } from "./marks";
 
 /**
  * The app switcher: a button in the header that opens the whole family, one row per app with its mark
@@ -42,7 +42,9 @@ export function AppSwitcher({ current, label = "Apps" }: { current: AppKey; labe
         <span className="ll-switcher-label">{label}</span>
       </summary>
       <div className="ll-switcher-panel">
-        <p className="ll-switcher-title">{company.name}</p>
+        <p className="ll-switcher-title">
+          <LonglineWordmark size={22} name={company.name} />
+        </p>
         <p className="ll-switcher-line">{company.familyLine}</p>
         <ul className="ll-switcher-list">
           {apps.map((app) => {

@@ -56,7 +56,7 @@ export function Header({ config, children }: { config: ShellConfig; children?: R
           {children}
           <ThemeToggle storageKey={config.themeStorageKey} />
           {actions}
-          <AppSwitcher current={app.key} />
+          {config.switcher !== false && <AppSwitcher current={app.key} />}
           {config.nav.length > 0 && (
             <details className="ll-menu">
               <summary className="ll-menu-button" aria-label="Menu">
@@ -69,6 +69,7 @@ export function Header({ config, children }: { config: ShellConfig; children?: R
                   <NavLink key={link.href} link={link} Link={Link} className="ll-menu-link" />
                 ))}
                 {!config.closedNotice && config.signIn && <NavLink link={config.signIn} Link={Link} className="ll-menu-link" />}
+                {!config.closedNotice && config.cta && <NavLink link={config.cta} Link={Link} className="ll-btn ll-btn-primary ll-menu-cta" />}
               </nav>
             </details>
           )}

@@ -11,7 +11,111 @@
   flex-direction: column;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-sans);
+  font: var(--ll-body-weight) var(--ll-body-size) / var(--ll-body-line) var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The type scale (tokens/tokens.json "type"). One class per role; a site uses these and sets no sizes of its own. */
+.ll-display-xl,
+.ll-h1 {
+  font: var(--ll-display-xl-weight) var(--ll-display-xl-size) / var(--ll-display-xl-line) var(--font-display);
+  letter-spacing: var(--ll-display-xl-tracking);
+  font-optical-sizing: auto;
+}
+.ll-display-md,
+.ll-h2 {
+  font: var(--ll-display-md-weight) var(--ll-display-md-size) / var(--ll-display-md-line) var(--font-display);
+  letter-spacing: var(--ll-display-md-tracking);
+  font-optical-sizing: auto;
+}
+.ll-title {
+  font: var(--ll-title-weight) var(--ll-title-size) / var(--ll-title-line) var(--font-sans);
+}
+.ll-heading {
+  font: var(--ll-heading-weight) var(--ll-heading-size) / var(--ll-heading-line) var(--font-sans);
+}
+.ll-body-lg {
+  font: var(--ll-body-lg-weight) var(--ll-body-lg-size) / var(--ll-body-lg-line) var(--font-sans);
+}
+.ll-body {
+  font: var(--ll-body-weight) var(--ll-body-size) / var(--ll-body-line) var(--font-sans);
+}
+.ll-body-sm {
+  font: var(--ll-body-sm-weight) var(--ll-body-sm-size) / var(--ll-body-sm-line) var(--font-sans);
+}
+.ll-label {
+  font: var(--ll-label-weight) var(--ll-label-size) / var(--ll-label-line) var(--font-sans);
+  letter-spacing: var(--ll-label-tracking);
+  text-transform: uppercase;
+}
+.ll-numeral {
+  font: var(--ll-numeral-weight) var(--ll-numeral-size) / var(--ll-numeral-line) var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+.ll-muted {
+  color: var(--ink-muted);
+}
+
+/* The page pattern (tokens/tokens.json "layout"): the hero, then sections 40px apart, the pricing grid. */
+.ll-hero {
+  display: grid;
+  grid-template-columns: var(--ll-hero-columns);
+  gap: var(--space-6) var(--ll-hero-gap);
+  align-items: center;
+  padding-block: var(--ll-hero-pad-top) var(--ll-hero-pad-bottom);
+}
+.ll-kicker {
+  margin: 0 0 var(--space-3);
+  color: var(--sea);
+  font: 600 var(--ll-body-lg-size) / var(--ll-body-lg-line) var(--font-sans);
+}
+.ll-h1 {
+  margin: 0;
+  text-wrap: balance;
+}
+.ll-lede {
+  margin: var(--space-4) 0 0;
+  max-width: 34em;
+  color: var(--ink-muted);
+  font: var(--ll-body-lg-weight) var(--ll-body-lg-size) / var(--ll-body-lg-line) var(--font-sans);
+}
+.ll-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
+  margin-top: var(--space-6);
+}
+.ll-note {
+  color: var(--ink-muted);
+}
+.ll-section {
+  padding-bottom: var(--ll-section-gap);
+  scroll-margin-top: calc(var(--ll-header-height) + var(--space-5));
+}
+.ll-section-rule {
+  border-top: 1px solid var(--hairline);
+  padding-top: var(--ll-section-gap);
+}
+.ll-h2 {
+  margin: 0 0 var(--space-4);
+}
+.ll-h2:has(+ .ll-section-line) {
+  margin-bottom: var(--space-1);
+}
+.ll-section-line {
+  margin: 0 0 var(--space-5);
+  max-width: 36em;
+  color: var(--ink-muted);
+  font: var(--ll-body-lg-weight) var(--ll-body-lg-size) / var(--ll-body-lg-line) var(--font-sans);
+}
+.ll-page-top {
+  padding-top: var(--ll-hero-pad-top);
+}
+.ll-pricing-grid {
+  display: grid;
+  grid-template-columns: var(--ll-pricing-columns);
+  gap: var(--ll-pricing-gap);
 }
 
 .ll-main {
@@ -27,11 +131,7 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 767px) {
-  .ll-container {
-    padding-inline: var(--ll-gutter-phone);
-  }
-}
+
 
 .ll-sr {
   position: absolute;
@@ -102,6 +202,8 @@
   align-items: center;
   gap: var(--space-2);
   min-width: 0;
+  flex: 0 1 auto;
+  overflow: hidden;
   color: var(--ink);
   text-decoration: none;
 }
@@ -132,6 +234,8 @@
   letter-spacing: -0.01em;
   font-optical-sizing: auto;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ll-nav {
@@ -322,7 +426,7 @@
   right: 0;
   top: calc(100% + 8px);
   z-index: 50;
-  width: min(360px, calc(100vw - 2 * var(--ll-gutter-phone)));
+  width: min(360px, calc(100vw - 2 * var(--ll-gutter)));
   padding: var(--space-4);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-lg);
@@ -331,11 +435,24 @@
 }
 
 .ll-switcher-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
   margin: 0;
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 24px;
+}
+
+/* The Longline Labs lockup: the mark and the name in the display face. */
+.ll-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--ink);
+  text-decoration: none;
+}
+.ll-lockup-name {
+  font: 500 18px / 24px var(--font-display);
+  letter-spacing: -0.005em;
+  white-space: nowrap;
 }
 
 .ll-switcher-line {
@@ -474,6 +591,9 @@ a.ll-switcher-app:hover {
 .ll-menu-link[aria-current="page"] {
   color: var(--ll-accent-text);
 }
+.ll-menu-cta {
+  margin-top: var(--space-1);
+}
 
 @media (max-width: 899px) {
   .ll-nav,
@@ -507,10 +627,9 @@ a.ll-switcher-app:hover {
   .ll-wordmark {
     font-size: 20px;
   }
-  .ll-cta {
-    min-height: 32px;
-    padding: 0 10px;
-    font-size: 13.5px;
+  /* The header's button gives way to the wordmark; the hero repeats it a few lines down, and the menu offers it too. */
+  .ll-header-row > .ll-actions > .ll-cta {
+    display: none;
   }
 }
 
@@ -526,6 +645,8 @@ a.ll-switcher-app:hover {
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-2) var(--space-5);
+  /* As tall as a row with the button (36px plus the padding), so the footer is the same height on a site without one. */
+  min-height: calc(36px + 2 * var(--space-5));
   padding-block: var(--space-5);
   color: var(--ink-muted);
   font-size: 14px;
@@ -538,8 +659,12 @@ a.ll-switcher-app:hover {
   gap: var(--space-2);
 }
 
-.ll-footer-company .ll-mark {
-  color: var(--ink-muted);
+.ll-footer-company .ll-lockup {
+  color: var(--ink);
+}
+.ll-footer-company .ll-lockup-name {
+  font-size: 15px;
+  line-height: 20px;
 }
 
 .ll-footer-link {

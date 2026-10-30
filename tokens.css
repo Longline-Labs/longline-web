@@ -1,5 +1,6 @@
 /* Longline Labs web tokens. Generated from tokens/tokens.json and apps.json by scripts/build-tokens.mjs;
-   edit those, not this. The names are Harbor's (@longline/harbor), with the per-app accent roles added. */
+   edit those, not this. The colour names are Harbor's (@longline/harbor); the accent roles, the type scale and the
+   page frame are the shell's own (--ll-*). A site inherits every one of them and defines none (scripts/check-sites.mjs). */
 
 /* Light: the default, and what the switch chooses with data-theme="light" on <html>. */
 :root,
@@ -216,16 +217,71 @@
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-round: 999px;
+  /* The type scale: one set of sizes for every site. */
+  --ll-display-xl-size: 44px;
+  --ll-display-xl-line: 50px;
+  --ll-display-xl-weight: 500;
+  --ll-display-xl-tracking: -0.01em;
+  --ll-display-md-size: 28px;
+  --ll-display-md-line: 34px;
+  --ll-display-md-weight: 500;
+  --ll-display-md-tracking: -0.005em;
+  --ll-title-size: 20px;
+  --ll-title-line: 28px;
+  --ll-title-weight: 600;
+  --ll-heading-size: 16px;
+  --ll-heading-line: 24px;
+  --ll-heading-weight: 600;
+  --ll-body-lg-size: 17px;
+  --ll-body-lg-line: 26px;
+  --ll-body-lg-weight: 400;
+  --ll-body-size: 15px;
+  --ll-body-line: 22px;
+  --ll-body-weight: 400;
+  --ll-body-sm-size: 13px;
+  --ll-body-sm-line: 18px;
+  --ll-body-sm-weight: 400;
+  --ll-label-size: 12px;
+  --ll-label-line: 16px;
+  --ll-label-weight: 600;
+  --ll-label-tracking: 0.04em;
+  --ll-numeral-size: 15px;
+  --ll-numeral-line: 22px;
+  --ll-numeral-weight: 500;
+  /* The page frame. */
   --ll-header-height: 64px;
   --ll-content-width: 1100px;
   --ll-gutter: 24px;
-  --ll-gutter-phone: 16px;
+  --ll-section-gap: 40px;
+  --ll-hero-pad-top: 48px;
+  --ll-hero-pad-bottom: 64px;
+  --ll-hero-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  --ll-hero-gap: 48px;
+  --ll-pricing-columns: repeat(2, minmax(0, 1fr));
+  --ll-pricing-gap: 16px;
   /* Harbor's focus ring and the default accent (the family teal) where no app is named. */
   --focus: var(--sea);
   --ll-accent: var(--ll-accent-teal);
   --ll-accent-text: var(--ll-accent-teal-text);
   --ll-accent-fill: var(--ll-accent-teal-fill);
   --ll-on-accent: var(--ll-accent-teal-on-fill);
+}
+
+/* On a phone the display sizes and the frame tighten; everything else holds. */
+@media (max-width: 767px) {
+  :root {
+    --ll-display-xl-size: 32px;
+    --ll-display-xl-line: 38px;
+    --ll-display-md-size: 24px;
+    --ll-display-md-line: 30px;
+    --ll-gutter: 16px;
+    --ll-section-gap: 32px;
+    --ll-hero-pad-top: 32px;
+    --ll-hero-pad-bottom: 40px;
+    --ll-hero-columns: minmax(0, 1fr);
+    --ll-hero-gap: 32px;
+    --ll-pricing-columns: minmax(0, 1fr);
+  }
 }
 
 /* Each app's accent, by data-app on the shell (or on <html>). Only --ll-accent* changes; nothing else is repainted. */

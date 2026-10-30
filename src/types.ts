@@ -33,8 +33,8 @@ export interface ShellConfig {
   footerLinks?: ShellLink[];
   /** The footer's right-hand secondary button; defaults to `signIn`. Pass null for none. */
   footerAction?: ShellLink | null;
-  /** The copyright holder; defaults to apps.json's company.legalName. */
-  legalName?: string;
+  /** Show the app switcher in the header. Default true; false for a page a board member or vendor lands on. */
+  switcher?: boolean;
   /** Where the browser remembers the light/dark choice. Default "theme". Coifish keeps its old "coifish-theme". */
   themeStorageKey?: string;
   Link?: LinkComponent;

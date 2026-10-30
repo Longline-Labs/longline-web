@@ -1,5 +1,5 @@
 import { company } from "./apps";
-import { LonglineMark } from "./marks";
+import { LonglineWordmark } from "./marks";
 import type { LinkComponent, ShellConfig } from "./types";
 
 const A: LinkComponent = ({ href, children, ...rest }) => (
@@ -8,7 +8,10 @@ const A: LinkComponent = ({ href, children, ...rest }) => (
   </a>
 );
 
-/** The footer every site shares: the copyright line with the Longline Labs mark, the links, and a secondary button at the right. */
+/**
+ * The footer every site shares: the Longline Labs lockup, the copyright line naming the company as apps.json has it
+ * (the one place it is written; no site may say otherwise), the links, and a secondary button at the right.
+ */
 export function Footer({ config, year = new Date().getFullYear() }: { config: ShellConfig; year?: number }) {
   const Link = config.Link ?? A;
   const action = config.footerAction === undefined ? config.signIn : config.footerAction;
@@ -16,9 +19,9 @@ export function Footer({ config, year = new Date().getFullYear() }: { config: Sh
     <footer className="ll-footer">
       <div className="ll-container ll-footer-row">
         <span className="ll-footer-company">
-          <LonglineMark size={18} />
+          <LonglineWordmark size={18} />
           <span>
-            © {year} {config.legalName ?? company.legalName}
+            © {year} {company.legalName}
           </span>
         </span>
         {(config.footerLinks ?? []).map((link) => (

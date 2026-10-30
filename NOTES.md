@@ -56,12 +56,36 @@ not for a label on a fill.
 
 ## Logos
 
-No Longline Labs logo exists anywhere (the brand folder has only the three app marks and Coifish's
-Stripe branding; `legal/` has the Articles of Amendment renaming COIFISH LLC to Longline Labs). The
-`LonglineMark` here and `logos/longline-mark-placeholder*.svg` are Harbor's company ring-and-dot as a
-stand-in. The three app marks are the approved Option 2 files, copied byte for byte into `logos/`.
+No Longline Labs logo exists anywhere: searched the whole suite folder on October 30, 2026 (brand/, both
+Harbor kits in the zips, every repo's public and src folders, backups, research, overnight), for SVG,
+PNG, Figma, AI, Sketch or PDF files named or containing "longline", "double L" or "monogram". The brand
+folder has only the three app marks and Coifish's Stripe branding; `legal/` has the Articles of
+Amendment. `LonglineMark` and `logos/longline-mark-draft*.svg` are therefore a draft from Brandon's
+description, flagged in the README. The three app marks are the approved Option 2 files, byte for byte.
 
-## What converting the other two will take
+## What each site dropped to reach parity (October 30, 2026)
+
+- **coifish.com**: the landing page's Tailwind arbitrary sizes for the hero (`text-[2.1rem] md:text-[2.75rem]`,
+  `text-[1.75rem]` section titles, `text-[1.1rem]` lede, `py-12 md:py-16` hero, `pb-10` sections,
+  `max-w-[1100px] px-4 md:px-6` container, `md:grid-cols-2` pricing) for the shell's classes; its own
+  Dock rail, header and footer; the device-dark and print colour repeats in globals.css; the
+  `@theme inline` font stacks now pass through to the shell's. Kept: its `--radius-md/lg` Tailwind corner
+  sizes (6/8px) for the signed-in app, and everything inside the sections.
+- **reelminders.com**: `site.css` lost its font stacks and `--header` / `--content` / `--rail`, the
+  `.site-header*`, `.wordmark`, `.site-nav*`, `.site-footer*`, `.container`, `.section*`, `.hero*` and
+  `.kicker` rules and their phone variants, the `.pricing` grid, and `.skip-link`; `shell.tsx` is now the
+  config plus `SiteShell`; the header's `TrialButton` moved into the config (`Tell me when it opens` → the
+  launch list while the app is closed). Kept: the mockup, the Monday email, the glance figure, steps,
+  checks, calculator, FAQ, the launch-list form (its button takes `--ll-accent-fill`).
+- **packetskipper.com**: `globals.css` lost its font stacks (`--ui` now passes through to `--font-sans`),
+  the `.site*` header, rail, apps-menu and footer rules, and `.hero*`, `.eyebrow`, `.home-*`,
+  `.section-line`, `.price-grid`; `AppsMenu.tsx` is gone; `PublicShell.tsx` is the config plus
+  `PublicFrame`, `PublicHeader` (the dev pages) and `AuthCard`. Kept: the packet strip, product preview,
+  steps, checks, price card, calculator, FAQ, and the "Opening soon" pre-launch state (now the shell's
+  `closedNotice`). Its root layout uses the shell's `themeScript()`; globals.css gained the device-dark
+  follow for the agenda paper and Harbor's light/dark pieces, as Coifish has.
+
+## What converting the other two took (done October 30; the plan as written beforehand)
 
 **ReelMinder** (`apps/ReelMinder/site`): add `@longline/web` (a GitHub dependency, since the site builds
 on Cloudflare), add it to `transpilePackages` in `site/next.config.ts`, import `tokens.css` and
