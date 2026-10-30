@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.5 — 2026-10-30
+
+- The six app descriptions in `apps.json` rewritten as Brandon gave them on October 30, 2026: a sentence or two each on
+  what the app does for a community manager. They show on longlinelabs.com's cards, in every family section and in
+  the header switcher.
+
 ## 0.4.4 — 2026-10-30
 
 - On desktop the Linked LL sits in its own 56px corner cell at the far left of the header, directly above the rail,

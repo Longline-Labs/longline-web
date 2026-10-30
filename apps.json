@@ -16,7 +16,7 @@
       "accent": "koi",
       "status": "live",
       "switcher": true,
-      "description": "Certificates of insurance for every vendor at every association, current and on file."
+      "description": "Automated vendor COI tracking. Coifish reminds vendors when their insurance is expiring and collects the new certificates, so you don’t have to."
     },
     {
       "key": "reelminder",
@@ -27,7 +27,7 @@
       "accent": "brass",
       "status": "coming-soon",
       "switcher": true,
-      "description": "One Monday email with every deadline you manage."
+      "description": "Tracks every Association deadline, from insurance expirations and contract renewals to meeting notice dates, and reminds you before each one."
     },
     {
       "key": "packetskipper",
@@ -38,7 +38,7 @@
       "accent": "kelp",
       "status": "coming-soon",
       "switcher": true,
-      "description": "Board packets, minutes, action items, all in one place."
+      "description": "Builds Board meeting packets, records minutes, and tracks action items until you check them off."
     },
     {
       "key": "ballastbook",
@@ -49,7 +49,7 @@
       "accent": "cobalt",
       "status": "coming-soon",
       "switcher": true,
-      "description": "Easily create clear, organized budgets"
+      "description": "A simple, straightforward Annual Budget builder for each of your Associations."
     },
     {
       "key": "shipshapefiles",
@@ -60,7 +60,7 @@
       "accent": "plum",
       "status": "coming-soon",
       "switcher": true,
-      "description": "Automatically consistently name files"
+      "description": "Automatically renames every file to your own custom naming convention, so documents are always easy to find."
     },
     {
       "key": "aboveboard",
@@ -71,7 +71,7 @@
       "accent": "azure",
       "status": "coming-soon",
       "switcher": true,
-      "description": "One place to access all public governing documents, meeting minutes, and records"
+      "description": "An easy-to-use public database where each Association can post its Governing Documents, minutes and records."
     }
   ]
 }
