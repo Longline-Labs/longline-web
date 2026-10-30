@@ -23,7 +23,8 @@ function NavLink({ link, Link, className }: { link: ShellLink; Link: LinkCompone
  * The header every site shares. Left: the Longline Labs mark beside this app's mark and wordmark, as one
  * link home. Middle: the nav links. Right: the light/dark switch, Sign in, the one primary button, and
  * the app switcher. A 3px stripe in the app's accent runs along the top; the accent appears nowhere
- * else in the bar except the active nav item and link hover.
+ * else in the bar except the active nav item and link hover. Where the rail is showing (desktop), the switcher is
+ * hidden as redundant (Brandon, October 30); on phones, where the rail is hidden, it stays.
  */
 export function Header({ config, children }: { config: ShellConfig; children?: ReactNode }) {
   const app = appByKey(config.app);
@@ -38,7 +39,7 @@ export function Header({ config, children }: { config: ShellConfig; children?: R
     </>
   );
   return (
-    <header className="ll-header">
+    <header className={config.rail !== false ? "ll-header ll-header-with-rail" : "ll-header"}>
       <div className="ll-container ll-header-row">
         <Link href={config.homeHref ?? "/"} className="ll-brand" title={`${name} home`}>
           <LonglineMark size={26} className="ll-brand-company" />

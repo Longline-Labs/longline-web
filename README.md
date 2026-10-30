@@ -118,7 +118,7 @@ import { Shell } from "@longline/web";
 `Shell` also draws the rail (`AppRail`): 56px of app marks down the left under the header on desktop, in
 longline order, widening on hover to show the names; the current app is ringed in its accent, a live app links to
 its site, the rest say "Coming soon". It is the family's standing advertisement on every page and is hidden on
-phones, where the switcher does the job. Pass `rail: false` and `switcher: false` for a page that shouldn't
+phones, where the switcher does the job; where the rail shows, the header's switcher is hidden as redundant. Pass `rail: false` and `switcher: false` for a page that shouldn't
 promote the other apps (an invitation a board member opens). `Header` and `Footer` can be used on their own. The copyright line
 reads `company.legalName` from `apps.json` (LONGLINE LABS LLC) and no site can override it.
 

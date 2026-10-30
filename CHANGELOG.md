@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.1 — 2026-10-30
+
+- The header's Apps switcher is hidden where the rail is showing (900px and up), since the rail lists the same apps;
+  it stays on phones, where the rail is hidden.
+
 ## 0.4.0 — 2026-10-30
 
 - **The rail is back** (`AppRail`, on by default in `Shell`): the apps' marks down the left of every page under

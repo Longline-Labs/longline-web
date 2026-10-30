@@ -728,6 +728,13 @@ a.ll-switcher-app:hover {
   margin-top: var(--space-1);
 }
 
+/* With the rail showing, the header's switcher would list the same apps twice; it comes back on phones. */
+@media (min-width: 900px) {
+  .ll-header-with-rail .ll-switcher {
+    display: none;
+  }
+}
+
 @media (max-width: 899px) {
   .ll-nav,
   .ll-signin {
