@@ -688,7 +688,7 @@ a.ll-switcher-app:hover {
   }
 }
 
-/* The family section (FamilySection): the six-colour longline beside the heading, then a card per app. ------- */
+/* The family section (FamilySection): the six-app longline beside the heading, then a card per app. ---------- */
 
 .ll-family-head {
   display: flex;
@@ -712,11 +712,11 @@ a.ll-switcher-app:hover {
   color: var(--mark-ink);
 }
 
+/* The six-app longline at its natural 360px, so each mark is 43px; on a narrow screen it takes the whole column. */
 .ll-family-illustration {
-  width: 200px;
+  width: min(360px, 100%);
   height: auto;
   flex: none;
-  margin-bottom: calc(-1 * var(--space-3));
 }
 
 .ll-family-cards {
@@ -738,9 +738,8 @@ a.ll-switcher-app:hover {
   .ll-family-cards {
     grid-template-columns: minmax(0, 1fr);
   }
-  .ll-family-illustration {
-    width: 160px;
-    margin-bottom: 0;
+  .ll-family-head {
+    align-items: flex-start;
   }
 }
 

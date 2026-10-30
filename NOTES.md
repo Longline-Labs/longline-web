@@ -58,15 +58,17 @@ not for a label on a fill.
 
 Until the afternoon of October 30, 2026 no Longline Labs logo existed anywhere in the suite, and the package
 carried first a placeholder (Harbor's ring and dot), then a draft. That afternoon Brandon supplied
-`brand/approved-five-app-brand-package` and then `brand/longline-labs-complete-brand-package`, which
-supersedes it; the package now uses the complete one: the Linked LL company mark, six app marks (the first
+`brand/approved-five-app-brand-package`, then `brand/longline-labs-complete-brand-package`, then the final
+`brand/longline-labs-approved-brand-package`, which supersedes both and is the source of truth; the package uses it: the Linked LL company mark, six app marks (the first
 three byte-identical to the Option 2 files already in use), the six-colour longline and `palette.json`.
 Naming: the package's handoff calls the fifth app ShipShapeFiles; Brandon confirmed the product name is
 ShipShape and shipshapefiles.com is only its domain, so the display name is ShipShape and the key and files
-stay `shipshapefiles`. No repo uses the name AboveboardDocs. Dark reconciliation: palette.json's
-dark_illustration_accent for the first three (#e8865c, #d9a94a, #4fb08a) is exactly what Harbor's tokens.css
-had as those apps' dark accents, so the UI roles were already right; what was new is that the mark keeps its
-day colour at night, which the inline marks already did by drawing the brand hex.
+stay `shipshapefiles`. No repo uses the name AboveboardDocs. Dark reconciliation: the complete
+package's palette gave the first three a lifted night colour in the illustration (#e8865c, #d9a94a, #4fb08a),
+exactly Harbor's dark accents; the final package's palette makes their illustration colour the day accent, the
+same as inside the mark. The shell's UI roles (stripe, button, active link) are separate tokens and still use
+Harbor's lifted night values, so nothing in the UI changed with either palette. The final illustration draws the
+six actual marks under a straight mainline, replacing the dots.
 
 ## What each site dropped to reach parity (October 30, 2026)
 

@@ -66,7 +66,7 @@ for (const mode of tokens.modes) {
     // The brand assets as approved: reported for the record (a logo and a decorative graphic are exempt from the
     // AA rules), never failed, never recoloured here.
     check(group, "accent stroke of the mark on paper (brand asset, reported only)", a.mark, base.paper, 0);
-    check(group, "dot in the longline illustration on paper (brand asset, reported only)", a.illustration, base.paper, 0);
+    check(group, "accent in the longline illustration on paper (brand asset, reported only)", a.illustration, base.paper, 0);
   }
 }
 

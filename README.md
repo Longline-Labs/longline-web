@@ -17,12 +17,15 @@ Each site changes exactly three things: its wordmark, its copy, and one accent c
 - `NOTES.md` records what the three sites were built with before this package and what moving the
   other two takes.
 
-The marks are the approved ones from `brand/longline-labs-complete-brand-package` (October 30, 2026):
-the Linked LL for Longline Labs, and the six app marks, as inline SVG with the files' geometry exactly
-(`src/marks.tsx`) and as the files themselves in `logos/` (default, dark and mono), which are also the base
-for favicons. The six-colour longline (`illustration/`, `LonglineIllustration`) is a supporting graphic: it
-appears in `FamilySection`, never in the header and never as a favicon, and apps are not added to it
-automatically.
+The brand's source of truth is `brand/longline-labs-approved-brand-package` (the final package, October 30,
+2026): the Linked LL for Longline Labs, the six app marks, `palette.json` and the supporting illustration. The
+marks are inline SVG with the files' geometry exactly (`src/marks.tsx`); the files themselves are in `logos/`
+(default, dark and mono) and are the base for favicons. The six-app longline (`illustration/`,
+`LonglineIllustration`: a straight mainline, six equal drops, the actual app marks beneath) is a supporting
+graphic used large: at 360px in `FamilySection`, the whole column on a phone, never in the header, never as a
+favicon or compact icon; apps are not added to it automatically. The package's handoff writes the fifth app as
+ShipShapeFiles; Brandon's decision is that the product is ShipShape and shipshapefiles.com is its domain,
+which is what the shell shows.
 
 ## The family: six apps, one live
 
@@ -177,10 +180,11 @@ and it appears in exactly these places:
 | The favicon | the app's mark | (a logo; exempt) |
 | The accent stroke inside the app's mark (`--ll-accent-<key>-mark`) and its dot in the longline (`-illustration`) | from the brand package's palette.json | reported, not failed: brand assets |
 
-In dark mode the first three apps keep their day colour inside the mark (#d9643a, #c6912c, #2e8a68) and take
-the lighter night value only in the illustration (#e8865c, #d9a94a, #4fb08a); the three newer apps take the
-night value for both. The UI roles (stripe, button, active link) use the night values, which are what Harbor
-already called those apps' dark accents.
+In dark mode the first three apps keep their day colour inside the mark and in the illustration (#d9643a,
+#c6912c, #2e8a68); the three newer apps take their night value for both (#8aa0e0, #c993c2, #79b9d8), as the
+final package's palette.json records. The UI roles (stripe, button, active link) are separate tokens and use
+the lifted night values Harbor already called those apps' dark accents, so a palette change to the marks or the
+illustration never repaints a button.
 
 Nowhere else: not on headings, kickers, cards, backgrounds, borders or status badges. The variables are
 namespaced (`--ll-accent`, `--ll-accent-text`, `--ll-accent-fill`, `--ll-on-accent`) so they never collide with a

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.2 — 2026-10-30
+
+- **The final approved package** (`brand/longline-labs-approved-brand-package`) is the source of truth. Marks are
+  unchanged (byte-identical). The supporting illustration is its new design: a straight mainline, six equal drops
+  and the six actual app marks beneath, drawn in `LonglineIllustration` from the same marks the header uses, at
+  360px in `FamilySection` (the whole column on a phone). The first three apps' `illustration` colours are their
+  day accents now, as palette.json has them; stripes and buttons are untouched.
+
 ## 0.3.1 — 2026-10-30
 
 - Domains for BallastBook (ballastbook.com) and Aboveboard (aboveboarddocs.com), recorded for when they go live; still
