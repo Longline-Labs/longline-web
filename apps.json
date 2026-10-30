@@ -1,0 +1,40 @@
+{
+  "company": {
+    "name": "Longline Labs",
+    "legalName": "COIFISH LLC",
+    "_note": "`name` is the brand shown beside every wordmark. `legalName` is what the copyright line says; it stays COIFISH LLC until the state approves the Articles of Amendment (legal/Articles-of-Amendment-COIFISH-to-Longline-Labs.pdf), then change it here once.",
+    "familyLine": "Apps for community association managers, built to work the same way."
+  },
+  "apps": [
+    {
+      "key": "coifish",
+      "name": "Coifish",
+      "domain": "coifish.com",
+      "url": "https://coifish.com",
+      "appUrl": "https://app.coifish.com",
+      "accent": "teal",
+      "live": true,
+      "description": "Certificates of insurance for every vendor at every association, current and on file."
+    },
+    {
+      "key": "reelminder",
+      "name": "ReelMinder",
+      "domain": "reelminders.com",
+      "url": "https://reelminders.com",
+      "appUrl": "https://app.reelminders.com",
+      "accent": "brass",
+      "live": true,
+      "description": "One Monday email with every deadline you manage."
+    },
+    {
+      "key": "packetskipper",
+      "name": "PacketSkipper",
+      "domain": "packetskipper.com",
+      "url": "https://packetskipper.com",
+      "appUrl": "https://app.packetskipper.com",
+      "accent": "kelp",
+      "live": true,
+      "description": "Board packets, minutes, action items, all in one place."
+    }
+  ]
+}

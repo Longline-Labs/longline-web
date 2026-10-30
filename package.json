@@ -1,0 +1,35 @@
+{
+  "name": "@longline/web",
+  "version": "0.1.0",
+  "description": "The Longline Labs website shell shared by coifish.com, reelminders.com and packetskipper.com: design tokens, the header with the app switcher, the footer, the light/dark switch and a page layout. One family, one accent per app.",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "files": ["src", "logos", "tokens", "*.css", "*.json", "*.md"],
+  "exports": {
+    ".": "./src/index.ts",
+    "./tokens.css": "./tokens.css",
+    "./shell.css": "./shell.css",
+    "./tokens.json": "./tokens/tokens.json",
+    "./apps.json": "./apps.json",
+    "./logos/*": "./logos/*"
+  },
+  "scripts": {
+    "build:tokens": "node scripts/build-tokens.mjs",
+    "check:tokens": "node scripts/build-tokens.mjs --check",
+    "check:contrast": "node scripts/check-contrast.mjs",
+    "check:types": "tsc --noEmit -p tsconfig.json",
+    "test": "npm run check:tokens && npm run check:contrast && npm run check:types"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.6.0"
+  }
+}

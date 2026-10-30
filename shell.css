@@ -1,0 +1,564 @@
+/* The Longline Labs website shell: header, app switcher, footer, page frame, buttons, the light/dark
+   switch. Import after tokens.css. Every class starts with ll- so it can sit beside Tailwind or an
+   app's own stylesheet without a clash. The accent appears only where the rule allows it: the stripe
+   along the top of the header, the active nav item and link hover, the primary button, and the tile
+   behind an app's mark in the switcher. Nothing else is repainted per app. */
+
+.ll-shell {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+.ll-main {
+  flex: 1 0 auto;
+  outline: none;
+}
+
+.ll-container {
+  width: 100%;
+  max-width: var(--ll-content-width);
+  margin-inline: auto;
+  padding-inline: var(--ll-gutter);
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .ll-container {
+    padding-inline: var(--ll-gutter-phone);
+  }
+}
+
+.ll-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.ll-skip {
+  position: absolute;
+  left: var(--space-2);
+  top: var(--space-2);
+  z-index: 60;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--accent-fill);
+  color: var(--on-accent);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-300%);
+}
+.ll-skip:focus {
+  transform: none;
+}
+
+.ll-shell :where(a, button, summary, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ll-link,
+  .ll-btn,
+  .ll-switcher-button,
+  .ll-menu-button,
+  .ll-switcher-app,
+  .ll-theme-knob {
+    transition:
+      background-color 150ms ease-out,
+      border-color 150ms ease-out,
+      color 150ms ease-out,
+      transform 150ms ease-out;
+  }
+}
+
+/* Header ------------------------------------------------------------------------------------ */
+
+.ll-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--paper-raised);
+  border-top: 3px solid var(--accent);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.ll-header-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  min-height: calc(var(--ll-header-height) - 4px);
+}
+
+.ll-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.ll-brand-company {
+  color: var(--ink-muted);
+}
+
+.ll-brand-divider {
+  width: 1px;
+  height: 22px;
+  background: var(--hairline-strong);
+  opacity: 0.6;
+  margin-inline: var(--space-1);
+}
+
+.ll-mark {
+  display: block;
+  flex: none;
+  color: var(--mark-ink);
+}
+
+.ll-wordmark {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  font-optical-sizing: auto;
+  white-space: nowrap;
+}
+
+.ll-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  margin-left: var(--space-3);
+}
+
+.ll-link {
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ll-link:hover {
+  color: var(--accent-text);
+}
+
+.ll-nav-link[aria-current="page"] {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.ll-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: auto;
+}
+
+.ll-signin {
+  padding: 0 var(--space-1);
+}
+
+.ll-closed {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-round);
+  background: var(--paper-sunken);
+  color: var(--ink-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Buttons: the shared shapes. The primary takes the app's accent; nothing else does. */
+
+.ll-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--paper-raised);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.ll-btn:hover {
+  background: var(--paper-sunken);
+}
+
+.ll-btn-primary,
+.ll-btn-primary:hover {
+  border-color: var(--accent-fill);
+  background: var(--accent-fill);
+  color: var(--on-accent);
+}
+
+.ll-btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+.ll-btn-secondary {
+  background: var(--paper-raised);
+}
+
+.ll-btn-lg {
+  min-height: 44px;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+/* The light/dark switch ------------------------------------------------------------------- */
+
+.ll-theme {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 var(--space-1);
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  flex: none;
+}
+
+.ll-theme-unknown {
+  visibility: hidden;
+}
+
+.ll-theme-track {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  border-radius: var(--radius-round);
+  border: 1px solid var(--hairline-strong);
+  background: var(--paper-sunken);
+}
+
+.ll-theme-knob {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  display: flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-round);
+  background: var(--paper-raised);
+  color: var(--ink);
+  box-shadow: 0 0 0 1px var(--hairline);
+  transform: translateY(-50%);
+}
+
+.ll-theme[aria-checked="true"] .ll-theme-knob {
+  transform: translate(20px, -50%);
+}
+
+/* The app switcher -------------------------------------------------------------------------- */
+
+.ll-switcher {
+  position: relative;
+  flex: none;
+}
+
+.ll-switcher-button,
+.ll-menu-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: var(--radius-md);
+  color: var(--ink-muted);
+  font-size: 14.5px;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ll-switcher-button::-webkit-details-marker,
+.ll-menu-button::-webkit-details-marker {
+  display: none;
+}
+
+.ll-switcher-button:hover,
+.ll-menu-button:hover,
+.ll-switcher[open] > .ll-switcher-button,
+.ll-menu[open] > .ll-menu-button {
+  background: var(--paper-sunken);
+  color: var(--ink);
+}
+
+.ll-switcher-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 50;
+  width: min(360px, calc(100vw - 2 * var(--ll-gutter-phone)));
+  padding: var(--space-4);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--paper-raised);
+  box-shadow: var(--shadow-float);
+}
+
+.ll-switcher-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.ll-switcher-line {
+  margin: 2px 0 var(--space-3);
+  color: var(--ink-muted);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.ll-switcher-list {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ll-switcher-app {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+a.ll-switcher-app:hover {
+  background: var(--paper-sunken);
+}
+
+.ll-switcher-app[aria-current="page"] {
+  background: var(--paper-sunken);
+}
+
+/* The tile behind each app's mark: a hairline box, ringed in that app's accent (the li carries data-app). */
+.ll-switcher-tile {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.ll-switcher-off {
+  color: var(--ink-muted);
+}
+
+.ll-switcher-off .ll-switcher-tile {
+  box-shadow: inset 0 0 0 1px var(--hairline);
+  opacity: 0.6;
+}
+
+.ll-switcher-text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ll-switcher-name {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.ll-switcher-here {
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ll-switcher-desc {
+  color: var(--ink-muted);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.ll-switcher-domain {
+  color: var(--accent-text);
+  font-size: 12.5px;
+  line-height: 16px;
+}
+
+/* The phone menu ------------------------------------------------------------------------------ */
+
+.ll-menu {
+  position: relative;
+  display: none;
+}
+
+.ll-menu-button {
+  width: 36px;
+  padding: 0;
+  justify-content: center;
+}
+
+.ll-menu-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 50;
+  display: grid;
+  gap: 2px;
+  min-width: 220px;
+  padding: var(--space-2);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--paper-raised);
+  box-shadow: var(--shadow-float);
+}
+
+.ll-menu-link {
+  display: block;
+  padding: 10px var(--space-3);
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.ll-menu-link:hover {
+  background: var(--paper-sunken);
+}
+
+.ll-menu-link[aria-current="page"] {
+  color: var(--accent-text);
+}
+
+@media (max-width: 899px) {
+  .ll-nav,
+  .ll-signin {
+    display: none;
+  }
+  .ll-menu {
+    display: block;
+  }
+  .ll-switcher-label {
+    display: none;
+  }
+  .ll-switcher-button {
+    width: 36px;
+    padding: 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 479px) {
+  .ll-header-row {
+    gap: var(--space-3);
+  }
+  .ll-actions {
+    gap: var(--space-1);
+  }
+  .ll-brand-divider,
+  .ll-brand-mark {
+    display: none;
+  }
+  .ll-wordmark {
+    font-size: 20px;
+  }
+  .ll-cta {
+    min-height: 32px;
+    padding: 0 10px;
+    font-size: 13.5px;
+  }
+}
+
+/* Footer -------------------------------------------------------------------------------------- */
+
+.ll-footer {
+  border-top: 1px solid var(--hairline);
+  margin-top: auto;
+}
+
+.ll-footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-5);
+  padding-block: var(--space-5);
+  color: var(--ink-muted);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.ll-footer-company {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.ll-footer-company .ll-mark {
+  color: var(--ink-muted);
+}
+
+.ll-footer-link {
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.ll-footer-link:hover {
+  color: var(--accent-text);
+}
+
+.ll-footer-action {
+  margin-left: auto;
+}
+
+@media print {
+  .ll-header,
+  .ll-footer,
+  .ll-skip {
+    display: none;
+  }
+}
