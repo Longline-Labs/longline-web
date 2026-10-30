@@ -8,8 +8,8 @@ Each site changes exactly three things: its wordmark, its copy, and one accent c
   `tokens.css` is generated from it: plain CSS custom properties any stack can use.
 - `apps.json` is the one list of the family: name, domain, accent, whether the site is up.
 - `shell.css` styles the shell's components. Every class starts with `ll-`.
-- `src/` holds the React components: `Shell`, `Header`, `AppSwitcher`, `Footer`, `ThemeToggle`, the
-  marks, and `themeScript()` for the root layout.
+- `src/` holds the React components: `Shell`, `Header`, `AppSwitcher`, `AppRail`, `FamilySection`, `Footer`,
+  `ThemeToggle`, the marks, the illustration, and `themeScript()` for the root layout.
 - `scripts/check-contrast.mjs` fails `npm test` if any accent, in either mode, falls below WCAG AA
   where the rule lets it appear.
 - `scripts/check-sites.mjs` fails `npm test` if a consuming site (listed in `sites.json`) overrides the
@@ -115,8 +115,11 @@ import { Shell } from "@longline/web";
 `<main>` (give it `id="ll-main"` so the skip link still works). Before an app opens, pass
 `closedNotice: "Opening soon"` and the Sign in link and button are replaced by that text.
 
-`Shell` also takes `switcher: false` in the config for a page that shouldn't promote the other apps (an
-invitation a board member opens). `Header` and `Footer` can be used on their own. The copyright line
+`Shell` also draws the rail (`AppRail`): 56px of app marks down the left under the header on desktop, in
+longline order, widening on hover to show the names; the current app is ringed in its accent, a live app links to
+its site, the rest say "Coming soon". It is the family's standing advertisement on every page and is hidden on
+phones, where the switcher does the job. Pass `rail: false` and `switcher: false` for a page that shouldn't
+promote the other apps (an invitation a board member opens). `Header` and `Footer` can be used on their own. The copyright line
 reads `company.legalName` from `apps.json` (LONGLINE LABS LLC) and no site can override it.
 
 The components use no Tailwind classes, so a Tailwind site needs no `@source` for the package. The

@@ -35,6 +35,8 @@ export interface ShellConfig {
   footerAction?: ShellLink | null;
   /** Show the app switcher in the header. Default true; false for a page a board member or vendor lands on. */
   switcher?: boolean;
+  /** Show the rail of all the apps down the left of the page (desktop only). Default true; false alongside `switcher: false`. */
+  rail?: boolean;
   /** Where the browser remembers the light/dark choice. Default "theme". Coifish keeps its old "coifish-theme". */
   themeStorageKey?: string;
   Link?: LinkComponent;

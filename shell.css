@@ -118,9 +118,142 @@
   gap: var(--ll-pricing-gap);
 }
 
+.ll-body {
+  display: flex;
+  flex: 1 0 auto;
+  align-items: stretch;
+}
+
+.ll-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .ll-main {
   flex: 1 0 auto;
   outline: none;
+}
+
+/* The rail (AppRail): 56px of marks down the left under the header. The aside is the 56px column in the layout; the
+   list inside is the visible panel, and on hover it widens over the page to show the names, so nothing shifts. ---- */
+
+.ll-rail {
+  position: sticky;
+  top: var(--ll-header-height);
+  z-index: 30;
+  flex: none;
+  width: 56px;
+  height: calc(100vh - var(--ll-header-height));
+  height: calc(100dvh - var(--ll-header-height));
+}
+
+.ll-rail-list {
+  box-sizing: border-box;
+  width: 56px;
+  height: 100%;
+  margin: 0;
+  padding: var(--space-2);
+  display: grid;
+  grid-auto-rows: max-content;
+  gap: var(--space-1);
+  list-style: none;
+  background: var(--paper-raised);
+  border-right: 1px solid var(--hairline);
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ll-rail-list {
+    transition: width 200ms ease-out, box-shadow 200ms ease-out;
+  }
+}
+
+.ll-rail:hover .ll-rail-list,
+.ll-rail:focus-within .ll-rail-list {
+  width: 224px;
+  box-shadow: var(--shadow-float);
+}
+
+.ll-rail-app {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: 48px;
+  padding: 0 var(--space-1);
+  border-radius: var(--radius-md);
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+a.ll-rail-app:hover {
+  background: var(--paper-sunken);
+}
+
+.ll-rail-off {
+  cursor: default;
+}
+
+/* Each app's tile, ringed in that app's accent when it is the current one (the li carries data-app). */
+.ll-rail-tile {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+}
+
+.ll-rail-app[aria-current="page"] .ll-rail-tile {
+  background: var(--paper);
+  box-shadow: inset 0 0 0 2px var(--ll-accent);
+}
+
+.ll-rail-text {
+  display: grid;
+  min-width: 0;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ll-rail-text {
+    transition: opacity 150ms ease-out;
+  }
+}
+
+.ll-rail:hover .ll-rail-text,
+.ll-rail:focus-within .ll-rail-text {
+  opacity: 1;
+}
+
+.ll-rail-name {
+  font: 500 16px / 20px var(--font-display);
+  letter-spacing: -0.005em;
+}
+
+.ll-rail-off .ll-rail-name {
+  color: var(--ink-muted);
+}
+
+.ll-rail-soon {
+  color: var(--ink-muted);
+  font: 600 10.5px / 14px var(--font-sans);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 899px) {
+  .ll-rail {
+    display: none;
+  }
+}
+
+@media print {
+  .ll-rail {
+    display: none;
+  }
 }
 
 .ll-container {

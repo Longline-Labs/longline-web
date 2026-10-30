@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.0 — 2026-10-30
+
+- **The rail is back** (`AppRail`, on by default in `Shell`): the apps' marks down the left of every page under
+  the header, as coifish.com had before the shell, now with all six in longline order; hover shows the names.
+  Brandon: "good advertising for the other apps". `rail: false` leaves it out; hidden on phones.
+
 ## 0.3.3 — 2026-10-30
 
 - Descriptions for BallastBook, ShipShape and Aboveboard, as Brandon wrote them. No placeholders remain.

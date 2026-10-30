@@ -4,6 +4,7 @@ export { FamilySection } from "./FamilySection";
 export { DEFAULT_THEME_KEY, THEME_CHANGED_EVENT, readTheme, themeInUse, themeScript, type Theme } from "./theme";
 export { ThemeToggle } from "./ThemeToggle";
 export { AppSwitcher } from "./AppSwitcher";
+export { AppRail } from "./AppRail";
 export { Header } from "./Header";
 export { Footer } from "./Footer";
 export { Shell } from "./Shell";
