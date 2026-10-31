@@ -26,7 +26,7 @@
       "url": "https://reelminders.com",
       "appUrl": "https://app.reelminders.com",
       "accent": "brass",
-      "status": "coming-soon",
+      "status": "live",
       "switcher": true,
       "description": "Tracks every Association deadline, from insurance expirations and contract renewals to meeting notice dates, and reminds you before each one."
     },
@@ -37,7 +37,7 @@
       "url": "https://packetskipper.com",
       "appUrl": "https://app.packetskipper.com",
       "accent": "kelp",
-      "status": "coming-soon",
+      "status": "live",
       "switcher": true,
       "description": "Builds Board meeting packets, records minutes, and tracks action items until you check them off."
     },

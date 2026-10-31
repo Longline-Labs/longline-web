@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.9 — 2026-10-30
+
+- ReelMinder and PacketSkipper are `live` in `apps.json`: their websites are up (reelminders.com since October 25,
+  packetskipper.com since October 25), so the rail, the switcher, the family cards and Coifish's Dock link to them
+  (Brandon). The apps themselves are still closed to sign-ups; that is each site's own business.
+
 ## 0.4.8 — 2026-10-30
 
 - The Linked LL leads to longlinelabs.com on every site (Brandon): the corner cell on desktop, and on phones the mark
