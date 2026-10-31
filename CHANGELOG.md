@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.8 — 2026-10-30
+
+- The Linked LL leads to longlinelabs.com on every site (Brandon): the corner cell on desktop, and on phones the mark
+  beside the wordmark, now its own link (`ll-brand-company`) inside a new `ll-brand-group` wrapper, with the app's
+  mark and wordmark staying the link home. `company.url` in `apps.json` holds the address.
+
 ## 0.4.7 — 2026-10-30
 
 - The header's corner cell is 56px including its border, the rail's width. It was 57px, so the vertical hairline

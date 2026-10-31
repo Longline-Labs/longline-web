@@ -2,7 +2,8 @@
   "company": {
     "name": "Longline Labs",
     "legalName": "LONGLINE LABS LLC",
-    "_note": "`name` is the brand beside every wordmark; `legalName` is what every site's copyright line says (the shared footer reads it, and no site may override it).",
+    "url": "https://longlinelabs.com/",
+    "_note": "`name` is the brand beside every wordmark; `legalName` is what every site's copyright line says (the shared footer reads it, and no site may override it). `url` is the company site, where the Linked LL in every header leads.",
     "familyLine": "Apps for community association managers, built to work the same way."
   },
   "_note": "The family, in the order of the six-colour longline. `status` is \"live\" (the site is up: the switcher and the family section link to it) or \"coming-soon\" (shown with its mark and accent, labelled Coming soon, not linked). Flip one word to launch. `switcher` says whether the header's switcher lists the app at all. Domains as decided October 30, 2026: ballastbook.com, shipshapefiles.com (the product is ShipShape), aboveboarddocs.com.",

@@ -26,9 +26,11 @@ export interface Company {
   name: string;
   legalName: string;
   familyLine: string;
+  /** The company site, https://longlinelabs.com/: where the Linked LL in every header leads. */
+  url: string;
 }
 
-export const company: Company = { name: family.company.name, legalName: family.company.legalName, familyLine: family.company.familyLine };
+export const company: Company = { name: family.company.name, legalName: family.company.legalName, familyLine: family.company.familyLine, url: family.company.url };
 /** The six apps, in the fixed order of the longline. */
 export const apps: readonly FamilyApp[] = family.apps as FamilyApp[];
 /** The apps the header's switcher lists. */

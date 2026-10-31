@@ -358,6 +358,16 @@ a.ll-rail-app:hover {
   min-height: calc(var(--ll-header-height) - 4px);
 }
 
+/* The lockup: the company mark (a link to longlinelabs.com), a divider, then the app's own mark and wordmark (the link
+   home). On desktop with the rail, the first two hide and the corner cell carries the company mark instead. */
+.ll-brand-group {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
 .ll-brand {
   display: inline-flex;
   align-items: center;
@@ -371,7 +381,11 @@ a.ll-rail-app:hover {
 
 /* The Linked LL in the ink of the approved files: teal by day, cream by night, the same as the app marks' supporting strokes. */
 .ll-brand-company {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
   color: var(--mark-ink);
+  text-decoration: none;
 }
 
 .ll-brand-divider {

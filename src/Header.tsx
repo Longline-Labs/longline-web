@@ -21,8 +21,9 @@ function NavLink({ link, Link, className }: { link: ShellLink; Link: LinkCompone
 
 /**
  * The header every site shares. Far left, on desktop, the Longline Labs mark in its own 56px corner cell above the
- * rail (Brandon, October 30); then this app's mark and wordmark as one link home, starting where the page column
- * starts. On phones, with no rail, the Longline Labs mark sits beside the wordmark instead. Middle: the nav links. Right: the light/dark switch, Sign in, the one primary button, and
+ * rail (Brandon, October 30), a link to longlinelabs.com; then this app's mark and wordmark as one link home, starting
+ * where the page column starts. On phones, with no rail, the Longline Labs mark sits beside the wordmark instead,
+ * still a link to longlinelabs.com (Brandon, October 30). Middle: the nav links. Right: the light/dark switch, Sign in, the one primary button, and
  * the app switcher. A 3px stripe in the app's accent runs along the top; the accent appears nowhere
  * else in the bar except the active nav item and link hover. Where the rail is showing (desktop), the switcher is
  * hidden as redundant (Brandon, October 30); on phones, where the rail is hidden, it stays.
@@ -42,20 +43,25 @@ export function Header({ config, children }: { config: ShellConfig; children?: R
   return (
     <header className={config.rail !== false ? "ll-header ll-header-with-rail" : "ll-header"}>
       {config.rail !== false && (
-        <Link href={config.homeHref ?? "/"} className="ll-corner" title={company.name}>
+        <a href={company.url} className="ll-corner" title={company.name}>
           <LonglineMark size={28} />
           <span className="ll-sr">{company.name}</span>
-        </Link>
+        </a>
       )}
       <div className="ll-header-main">
       <div className="ll-container ll-header-row">
-        <Link href={config.homeHref ?? "/"} className="ll-brand" title={`${name} home`}>
-          <LonglineMark size={28} className="ll-brand-company" />
+        <span className="ll-brand-group">
+          <a href={company.url} className="ll-brand-company" title={company.name}>
+            <LonglineMark size={28} />
+            <span className="ll-sr">{company.name}</span>
+          </a>
           <span className="ll-brand-divider" aria-hidden="true" />
-          <Mark app={app.key} size={28} className="ll-brand-mark" />
-          <span className="ll-wordmark">{name}</span>
-          <span className="ll-sr">, by {company.name}</span>
-        </Link>
+          <Link href={config.homeHref ?? "/"} className="ll-brand" title={`${name} home`}>
+            <Mark app={app.key} size={28} className="ll-brand-mark" />
+            <span className="ll-wordmark">{name}</span>
+            <span className="ll-sr">, by {company.name}</span>
+          </Link>
+        </span>
         <nav className="ll-nav" aria-label="Main">
           {config.nav.map((link) => (
             <NavLink key={link.href} link={link} Link={Link} className="ll-link ll-nav-link" />
