@@ -201,6 +201,30 @@ value of the same colour; the hex pairs are in `tokens/tokens.json` under `accen
 
 ## Changing something
 
+Everything the family says about itself lives here once: `apps.json` (each app's name, domain, accent, status and
+one-line description, and the company's name and family line) and `tokens/tokens.json`. The sites and the apps
+read the package; none keeps its own copy of the list. So a change here is made once, then rolled out.
+
+### Releasing a change
+
 1. Edit `tokens/tokens.json` or `apps.json`; run `npm run build:tokens`; run `npm test`.
-2. Note it in `CHANGELOG.md`, bump the version, tag.
-3. Each site updates its dependency when it is ready. A pinned version never changes under a site.
+2. Note it in `CHANGELOG.md`, bump `version` in `package.json`, commit, tag `vX.Y.Z`.
+3. Push the branch and the tag: `git push origin main && git push origin vX.Y.Z`. Nothing below works until the tag
+   is on GitHub, because Coifish installs the package from there.
+
+### Rolling it out to every site
+
+Each consumer takes the new version when its command below is run; a pinned version never changes under a site.
+
+| Where it shows | Repo | Command |
+| --- | --- | --- |
+| longlinelabs.com (cards, longline) | `apps/longlinelabs` | `node scripts/sync.mjs`, then `npx wrangler deploy` |
+| coifish.com (family section, header switcher, rail) and the Coifish app's Dock | `apps/Coifish` | Change `#vX.Y.Z` on `@longline/web` in `package.json`, `npm install`, commit, `git push` (the pre-push hook runs the checks; the push deploys to Vercel) |
+| reelminders.com (family section, switcher, rail) | `apps/ReelMinder` | `rm -rf node_modules/@longline/web && npm install && npm run site:deploy` |
+| packetskipper.com (family section, switcher, rail) | `apps/PacketSkipper` | `rm -rf node_modules/@longline/web && npm install && npm run build` (not live yet; deploy when it is) |
+
+ReelMinder and PacketSkipper depend on `file:../../packages/longline-web` copied into `node_modules` (their `.npmrc`
+has `install-links=true`), and npm does not refresh that copy on its own, hence the `rm -rf` first. Coifish pins a tag
+on GitHub so Vercel can fetch it. The Coifish app's in-app Dock reads the same `apps` list (`src/config/apps.ts`
+there), so it moves with the website.
+
