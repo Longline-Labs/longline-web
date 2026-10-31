@@ -87,7 +87,7 @@ export function ShipShapeMark({ size = 28, title, className, x, y }: Props) {
   );
 }
 
-/** Aboveboard: a document above a horizontal board. (The approved design; never a mast or a hull.) */
+/** AboveBoard: a document above a horizontal board. (The approved design; never a mast or a hull.) */
 export function AboveboardMark({ size = 28, title, className, x, y }: Props) {
   return (
     <svg {...svgProps(size, title, className, x, y)}>

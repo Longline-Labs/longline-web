@@ -30,7 +30,7 @@ which is what the shell shows.
 ## The family: six apps, one live
 
 `apps.json` lists the apps in longline order: Coifish, ReelMinder, PacketSkipper, BallastBook, ShipShape
-(its domain is shipshapefiles.com, so its key and mark files say `shipshapefiles`), Aboveboard. Each has:
+(its domain is shipshapefiles.com, so its key and mark files say `shipshapefiles`), AboveBoard. Each has:
 
 - `status`: `"live"` or `"coming-soon"`. Only Coifish is live. A live app is linked from the switcher and
   the family section; a coming-soon app shows its mark and accent with a "Coming soon" label, is not a link,
@@ -195,7 +195,7 @@ site's own `--accent`, which on all three sites today is the family teal. The st
 colours (`--status-ok`, `--status-warn`, `--status-danger`, `--status-info` and their tints) are the same
 on every site and mean the same thing: current, expiring soon, expired, pending review.
 
-Where a brand colour is too light for a role by day (ReelMinder's brass, Coifish's rust on a button, Aboveboard's azure as text), the role takes a deeper
+Where a brand colour is too light for a role by day (ReelMinder's brass, Coifish's rust on a button, AboveBoard's azure as text), the role takes a deeper
 value of the same colour; the hex pairs are in `tokens/tokens.json` under `accents`, and
 `npm run check:contrast` prints every pairing with its ratio.
 

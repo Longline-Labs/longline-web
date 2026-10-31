@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.10 — 2026-10-30
+
+- The sixth app's name is AboveBoard, capital B, in `apps.json` and everywhere a site shows it (Brandon). The key
+  (`aboveboard`), the mark's export (`AboveboardMark`) and the domain (aboveboarddocs.com) are unchanged.
+
 ## 0.4.9 — 2026-10-30
 
 - ReelMinder and PacketSkipper are `live` in `apps.json`: their websites are up (reelminders.com since October 25,
