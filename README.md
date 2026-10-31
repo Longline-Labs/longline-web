@@ -219,7 +219,7 @@ Each consumer takes the new version when its command below is run; a pinned vers
 | Where it shows | Repo | Command |
 | --- | --- | --- |
 | longlinelabs.com (cards, longline) | `apps/longlinelabs` | `node scripts/sync.mjs`, then `npx wrangler deploy` |
-| coifish.com (family section, header switcher, rail) and the Coifish app's Dock | `apps/Coifish` | Change `#vX.Y.Z` on `@longline/web` in `package.json`, `npm install`, commit, `git push` (the pre-push hook runs the checks; the push deploys to Vercel) |
+| coifish.com (family section, header switcher, rail) and the Coifish app's Dock | `apps/Coifish` | Change `#vX.Y.Z` on `@longline/web` in `package.json`, `npm install`, commit, `git push` (the pre-push hook runs the safety net). Then check Vercel for the new production deployment; on October 30, 2026 the push alone did not start one, and `vercel deploy --prod` from a clean copy (PROGRESS.md there, October 21) did |
 | reelminders.com (family section, switcher, rail) | `apps/ReelMinder` | `rm -rf node_modules/@longline/web && npm install && npm run site:deploy` |
 | packetskipper.com (family section, switcher, rail) | `apps/PacketSkipper` | `rm -rf node_modules/@longline/web && npm install && npm run build` (not live yet; deploy when it is) |
 
