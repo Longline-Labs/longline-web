@@ -215,13 +215,14 @@ read the package; none keeps its own copy of the list. So a change here is made 
 ### Rolling it out to every site
 
 Each consumer takes the new version when its command below is run; a pinned version never changes under a site.
+Brandon runs each production deploy himself in his terminal.
 
 | Where it shows | Repo | Command |
 | --- | --- | --- |
 | longlinelabs.com (cards, longline) | `apps/longlinelabs` | `node scripts/sync.mjs`, then `npx wrangler deploy` |
 | coifish.com (family section, header switcher, rail) and the Coifish app's Dock | `apps/Coifish` | Change `#vX.Y.Z` on `@longline/web` in `package.json`, `npm install`, commit, `git push` (the pre-push hook runs the safety net). Then check Vercel for the new production deployment; on October 30, 2026 the push alone did not start one, and `vercel deploy --prod` from a clean copy (PROGRESS.md there, October 21) did |
 | reelminders.com (family section, switcher, rail) | `apps/ReelMinder` | `rm -rf node_modules/@longline/web && npm install && npm run site:deploy` |
-| packetskipper.com (family section, switcher, rail) | `apps/PacketSkipper` | `rm -rf node_modules/@longline/web && npm install && npm run build` (not live yet; deploy when it is) |
+| packetskipper.com (family section, switcher, rail) | `apps/PacketSkipper` (branch `longline-shell`) | `rm -rf node_modules/@longline/web && npm install && npm run build`, then `npx vercel deploy --prod` (Vercel project `packetskipper`, team `coif-ish`; `npx vercel link --yes --scope coif-ish --project packetskipper` first if the folder is not linked) |
 
 ReelMinder and PacketSkipper depend on `file:../../packages/longline-web` copied into `node_modules` (their `.npmrc`
 has `install-links=true`), and npm does not refresh that copy on its own, hence the `rm -rf` first. Coifish pins a tag
