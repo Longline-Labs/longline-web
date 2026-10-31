@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.7 — 2026-10-30
+
+- The header's corner cell is 56px including its border, the rail's width. It was 57px, so the vertical hairline
+  jogged one pixel where the header met the rail (Brandon).
+
 ## 0.4.6 — 2026-10-30
 
 - Family section: every card is the same height. The grid's rows were each sized to their own tallest card, so with

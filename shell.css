@@ -333,6 +333,7 @@ a.ll-rail-app:hover {
 .ll-corner {
   display: none;
   flex: none;
+  box-sizing: border-box; /* 56px including the border, the rail's width, so the two edges meet in one line */
   width: 56px;
   align-items: center;
   justify-content: center;
