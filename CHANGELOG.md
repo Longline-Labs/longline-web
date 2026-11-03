@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.12 — 2026-11-03
+
+- AboveBoard is `live` in `apps.json`: its website is up (aboveboarddocs.com since November 3), so the rail, the
+  switcher, the family cards and Coifish's Dock link to it (Brandon). All six apps are now live. The app itself is
+  still closed to sign-ups; that is the site's own business.
+
 ## 0.4.11 — 2026-11-03
 
 - BallastBook and ShipShape are `live` in `apps.json`: their websites are up (ballastbook.com since October 31,
