@@ -48,7 +48,7 @@
       "url": "https://ballastbook.com",
       "appUrl": null,
       "accent": "cobalt",
-      "status": "coming-soon",
+      "status": "live",
       "switcher": true,
       "description": "A simple, straightforward Annual Budget builder for each of your Associations."
     },
@@ -59,7 +59,7 @@
       "url": "https://shipshapefiles.com",
       "appUrl": null,
       "accent": "plum",
-      "status": "coming-soon",
+      "status": "live",
       "switcher": true,
       "description": "Automatically renames every file to your own custom naming convention, so documents are always easy to find."
     },

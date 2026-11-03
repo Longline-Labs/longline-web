@@ -4,6 +4,8 @@
     { "name": "coifish.com", "css": ["../../apps/Coifish/src/app/globals.css"] },
     { "name": "reelminders.com", "css": ["../../apps/ReelMinder/site/app/site.css", "../../apps/ReelMinder/site/app/layers.css"] },
     { "name": "packetskipper.com", "css": ["../../apps/PacketSkipper/src/app/globals.css"] },
-    { "name": "longlinelabs.com", "css": ["../../apps/longlinelabs/site.css"] }
+    { "name": "longlinelabs.com", "css": ["../../apps/longlinelabs/site.css"] },
+    { "name": "ballastbook.com", "css": ["../../apps/BallastBook/site/app/site.css", "../../apps/BallastBook/site/app/layers.css"] },
+    { "name": "shipshapefiles.com", "css": ["../../apps/ShipShape/site/app/site.css", "../../apps/ShipShape/site/app/layers.css"] }
   ]
 }

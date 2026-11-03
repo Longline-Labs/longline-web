@@ -27,12 +27,12 @@ favicon or compact icon; apps are not added to it automatically. The package's h
 ShipShapeFiles; Brandon's decision is that the product is ShipShape and shipshapefiles.com is its domain,
 which is what the shell shows.
 
-## The family: six apps, one live
+## The family: six apps, five live
 
 `apps.json` lists the apps in longline order: Coifish, ReelMinder, PacketSkipper, BallastBook, ShipShape
 (its domain is shipshapefiles.com, so its key and mark files say `shipshapefiles`), AboveBoard. Each has:
 
-- `status`: `"live"` or `"coming-soon"`. Only Coifish is live. A live app is linked from the switcher and
+- `status`: `"live"` or `"coming-soon"`. Every app but AboveBoard is live (its website is up). A live app is linked from the switcher and
   the family section; a coming-soon app shows its mark and accent with a "Coming soon" label, is not a link,
   and announces itself as "Name, coming soon". **To launch an app, change that one word.**
 - `switcher`: whether the header's switcher lists it (all six today).

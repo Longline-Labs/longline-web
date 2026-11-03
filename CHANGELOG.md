@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.11 — 2026-11-03
+
+- BallastBook and ShipShape are `live` in `apps.json`: their websites are up (ballastbook.com since October 31,
+  shipshapefiles.com since November 3), so the rail, the switcher, the family cards and Coifish's Dock link to them
+  (Brandon). The apps themselves are still closed to sign-ups; that is each site's own business.
+
 ## 0.4.10 — 2026-10-30
 
 - The sixth app's name is AboveBoard, capital B, in `apps.json` and everywhere a site shows it (Brandon). The key
