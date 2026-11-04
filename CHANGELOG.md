@@ -5,13 +5,13 @@
 - The rail and the switcher can show which apps the signed-in person uses (single sign-in plan, step 9). `AppRail`
   and `AppSwitcher` take `inUse`, the person's apps as keys (their grants at account.longlinelabs.com, which the app's
   own server reads from the account site's `/api/apps-in-use`); `ShellConfig.inUse` passes it through `Shell`. With at
-  least one app besides the current one in the list, the person's own apps stay at full strength, say "You use this"
-  under the name (where "Coming soon" goes) and lead to the signed-in app (`appUrl`) where it has one, else to its site;
-  the others go quiet (`ll-rail-quiet`, `ll-switcher-quiet`: mark at 45% and greyscale, name muted) but stay links, so
-  the whole family remains reachable. A used app's `<li>` carries `data-in-use`. Without the list, with a list that
-  couldn't be read (null), or when the person uses only this app, nothing changes: the family shows exactly as before.
-  `appsToMark` and `ownAppHref` are exported for a site drawing its own rail (Coifish's Dock). The wording "You use
-  this" and the quiet treatment are the first draft, for Brandon to confirm.
+  least one app besides the current one in the list, the person's own apps stay at full strength and lead to the
+  signed-in app (`appUrl`) where it has one, else to its site; the others go quiet (`ll-rail-quiet`,
+  `ll-switcher-quiet`: mark at 45% and greyscale, name muted) but stay links, so the whole family remains reachable.
+  No label says which is which: the fade alone tells (Brandon, November 4, 2026; a first draft said "You use this"
+  under the name). A used app's `<li>` carries `data-in-use`. Without the list, with a list that couldn't be read
+  (null), or when the person uses only this app, nothing changes: the family shows exactly as before. `appsToMark` and
+  `ownAppHref` are exported for a site drawing its own rail (Coifish's Dock).
 
 ## 0.4.12 — 2026-11-03
 

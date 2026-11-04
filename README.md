@@ -125,9 +125,9 @@ reads `company.legalName` from `apps.json` (LONGLINE LABS LLC) and no site can o
 Where the site knows who is signed in, `inUse` in the config (or on `AppRail` and `AppSwitcher` directly) is the person's
 apps as keys: the apps they have let sign them in with their Longline Labs account, which the app's own server reads from
 the account site (`apps/longline-account`, `POST /api/apps-in-use`, signed with the key `setup:client` wrote into the
-app's settings). With at least one app besides the current one in it, the person's own apps stay at full strength, say
-"You use this" and lead to the signed-in app (`appUrl` in `apps.json`) where it has one; the others go quiet but stay
-links. Leave it out, or pass null, when nobody is signed in or the list couldn't be read: the rail must never break a
+app's settings). With at least one app besides the current one in it, the person's own apps stay at full strength and
+lead to the signed-in app (`appUrl` in `apps.json`) where it has one; the others go quiet (faded) but stay links, and
+no label says which is which (Brandon, November 4, 2026). Leave it out, or pass null, when nobody is signed in or the list couldn't be read: the rail must never break a
 page, so the whole family then shows as it always has. `appsToMark` and `ownAppHref` do the same sums for a site that
 draws its own rail.
 

@@ -11,8 +11,8 @@ import { LonglineWordmark, Mark } from "./marks";
  * app whose site this is says "You are here". A <details>, so it works before any script runs; the script only
  * closes it on Escape or a click elsewhere.
  *
- * Given `inUse` (the signed-in person's apps) with at least one app besides this one, the person's own apps say
- * "You use this" and lead to the signed-in app where it has an address; the others go quiet but stay links.
+ * Given `inUse` (the signed-in person's apps) with at least one app besides this one, the person's own apps lead to
+ * the signed-in app where it has an address; the others go quiet but stay links. No label says which is which.
  */
 export function AppSwitcher({ current, inUse, label = "Apps" }: { current: AppKey; inUse?: AppsInUse | null; label?: string }) {
   const ref = useRef<HTMLDetailsElement>(null);
@@ -58,7 +58,7 @@ export function AppSwitcher({ current, inUse, label = "Apps" }: { current: AppKe
                 <span className="ll-switcher-text">
                   <span className="ll-switcher-name">
                     {app.name}
-                    {here ? <span className="ll-switcher-here">You are here</span> : !live ? <span className="ll-switcher-here">Coming soon</span> : mine && <span className="ll-switcher-here">You use this</span>}
+                    {here ? <span className="ll-switcher-here">You are here</span> : !live && <span className="ll-switcher-here">Coming soon</span>}
                   </span>
                   {app.description && <span className="ll-switcher-desc">{app.description}</span>}
                   {live && app.domain && <span className="ll-switcher-domain">{app.domain}</span>}

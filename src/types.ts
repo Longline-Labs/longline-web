@@ -39,8 +39,8 @@ export interface ShellConfig {
   rail?: boolean;
   /**
    * The apps the signed-in person uses (their grants at account.longlinelabs.com, as keys), when the site knows them.
-   * The rail and the switcher then keep those at full strength, say "You use this" under the name and lead to the
-   * signed-in app; the rest go quiet but stay reachable. Leave it out (or pass null) when nobody is signed in, when
+   * The rail and the switcher then keep those at full strength and lead to the signed-in app; the rest go quiet
+   * (faded) but stay reachable. Leave it out (or pass null) when nobody is signed in, when
    * the list couldn't be read, or when the person uses only this app: the whole family shows as it always has.
    */
   inUse?: AppsInUse | null;
