@@ -38,6 +38,23 @@ export const switcherApps: readonly FamilyApp[] = apps.filter((a) => a.switcher)
 
 export const isLive = (app: FamilyApp): boolean => app.status === "live";
 
+/** The apps a signed-in person uses, as keys: their grants at account.longlinelabs.com, read by the app's own server. */
+export type AppsInUse = readonly AppKey[];
+
+/**
+ * The person's apps when the list has something to show: at least one app besides the one they are in. A person who
+ * uses only this app, nobody signed in, or a list that couldn't be read (null or undefined): null, and the rail and the
+ * switcher show the whole family exactly as they always have.
+ */
+export function appsToMark(inUse: AppsInUse | null | undefined, current: AppKey): ReadonlySet<AppKey> | null {
+  if (!inUse) return null;
+  const known = new Set(inUse.filter((k) => apps.some((a) => a.key === k)));
+  return [...known].some((k) => k !== current) ? known : null;
+}
+
+/** Where one of the person's own apps leads: the signed-in app where it has an address, else its site. */
+export const ownAppHref = (app: FamilyApp): string | null => app.appUrl ?? app.url;
+
 export function appByKey(key: AppKey): FamilyApp {
   const app = apps.find((a) => a.key === key);
   if (!app) throw new Error(`@longline/web: no app named "${key}" in apps.json`);

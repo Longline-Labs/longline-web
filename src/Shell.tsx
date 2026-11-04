@@ -18,7 +18,7 @@ export function Shell({ config, children, main = true, headerExtra }: { config: 
       </a>
       <Header config={config}>{headerExtra}</Header>
       <div className="ll-body">
-        {config.rail !== false && <AppRail current={config.app} />}
+        {config.rail !== false && <AppRail current={config.app} inUse={config.inUse} />}
         <div className="ll-column">
           {main ? (
             <main id="ll-main" className="ll-main" tabIndex={-1}>

@@ -237,6 +237,17 @@ a.ll-rail-app:hover {
   color: var(--ink-muted);
 }
 
+/* With the signed-in person's own apps known (AppRail's inUse): the others go quiet, mark faded and name muted, and
+   stay links to their sites. */
+.ll-rail-quiet .ll-rail-tile {
+  opacity: 0.45;
+  filter: grayscale(100%);
+}
+
+.ll-rail-quiet .ll-rail-name {
+  color: var(--ink-muted);
+}
+
 .ll-rail-soon {
   color: var(--ink-muted);
   font: 600 10.5px / 14px var(--font-sans);
@@ -682,6 +693,16 @@ a.ll-switcher-app:hover {
 }
 
 .ll-switcher-off .ll-switcher-name {
+  color: var(--ink-muted);
+}
+
+/* With the signed-in person's own apps known (AppSwitcher's inUse): the others go quiet, still links. */
+.ll-switcher-quiet .ll-switcher-tile {
+  opacity: 0.45;
+  filter: grayscale(100%);
+}
+
+.ll-switcher-quiet .ll-switcher-name {
   color: var(--ink-muted);
 }
 

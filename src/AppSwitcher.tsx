@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { company, isLive, switcherApps, type AppKey } from "./apps";
+import { appsToMark, company, isLive, ownAppHref, switcherApps, type AppKey, type AppsInUse } from "./apps";
 import { LonglineWordmark, Mark } from "./marks";
 
 /**
@@ -10,8 +10,11 @@ import { LonglineWordmark, Mark } from "./marks";
  * live yet is a plain entry labelled "Coming soon", with that in its accessible name, and is not interactive. The
  * app whose site this is says "You are here". A <details>, so it works before any script runs; the script only
  * closes it on Escape or a click elsewhere.
+ *
+ * Given `inUse` (the signed-in person's apps) with at least one app besides this one, the person's own apps say
+ * "You use this" and lead to the signed-in app where it has an address; the others go quiet but stay links.
  */
-export function AppSwitcher({ current, label = "Apps" }: { current: AppKey; label?: string }) {
+export function AppSwitcher({ current, inUse, label = "Apps" }: { current: AppKey; inUse?: AppsInUse | null; label?: string }) {
   const ref = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
     const el = ref.current;
@@ -26,6 +29,7 @@ export function AppSwitcher({ current, label = "Apps" }: { current: AppKey; labe
       document.removeEventListener("click", onClick);
     };
   }, []);
+  const marked = appsToMark(inUse, current);
   return (
     <details ref={ref} className="ll-switcher">
       <summary className="ll-switcher-button" aria-label={`${company.name} apps`} title={`${company.name} apps`}>
@@ -43,6 +47,9 @@ export function AppSwitcher({ current, label = "Apps" }: { current: AppKey; labe
           {switcherApps.map((app) => {
             const here = app.key === current;
             const live = isLive(app);
+            const mine = !!marked?.has(app.key);
+            const quiet = !!marked && !mine && !here;
+            const href = mine && !here ? ownAppHref(app) : app.url;
             const body = (
               <>
                 <span className="ll-switcher-tile" aria-hidden="true">
@@ -51,7 +58,7 @@ export function AppSwitcher({ current, label = "Apps" }: { current: AppKey; labe
                 <span className="ll-switcher-text">
                   <span className="ll-switcher-name">
                     {app.name}
-                    {here ? <span className="ll-switcher-here">You are here</span> : !live && <span className="ll-switcher-here">Coming soon</span>}
+                    {here ? <span className="ll-switcher-here">You are here</span> : !live ? <span className="ll-switcher-here">Coming soon</span> : mine && <span className="ll-switcher-here">You use this</span>}
                   </span>
                   {app.description && <span className="ll-switcher-desc">{app.description}</span>}
                   {live && app.domain && <span className="ll-switcher-domain">{app.domain}</span>}
@@ -59,9 +66,9 @@ export function AppSwitcher({ current, label = "Apps" }: { current: AppKey; labe
               </>
             );
             return (
-              <li key={app.key} data-app={app.key}>
-                {live && app.url ? (
-                  <a href={app.url} className="ll-switcher-app" aria-current={here ? "page" : undefined}>
+              <li key={app.key} data-app={app.key} data-in-use={mine && !here ? "" : undefined}>
+                {live && href ? (
+                  <a href={href} className={quiet ? "ll-switcher-app ll-switcher-quiet" : "ll-switcher-app"} aria-current={here ? "page" : undefined}>
                     {body}
                   </a>
                 ) : (

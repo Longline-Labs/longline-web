@@ -71,7 +71,7 @@ export function Header({ config, children }: { config: ShellConfig; children?: R
           {children}
           <ThemeToggle storageKey={config.themeStorageKey} />
           {actions}
-          {config.switcher !== false && <AppSwitcher current={app.key} />}
+          {config.switcher !== false && <AppSwitcher current={app.key} inUse={config.inUse} />}
           {config.nav.length > 0 && (
             <details className="ll-menu">
               <summary className="ll-menu-button" aria-label="Menu">

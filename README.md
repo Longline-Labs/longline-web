@@ -122,6 +122,15 @@ phones, where the switcher does the job; where the rail shows, the header's swit
 promote the other apps (an invitation a board member opens). `Header` and `Footer` can be used on their own. The copyright line
 reads `company.legalName` from `apps.json` (LONGLINE LABS LLC) and no site can override it.
 
+Where the site knows who is signed in, `inUse` in the config (or on `AppRail` and `AppSwitcher` directly) is the person's
+apps as keys: the apps they have let sign them in with their Longline Labs account, which the app's own server reads from
+the account site (`apps/longline-account`, `POST /api/apps-in-use`, signed with the key `setup:client` wrote into the
+app's settings). With at least one app besides the current one in it, the person's own apps stay at full strength, say
+"You use this" and lead to the signed-in app (`appUrl` in `apps.json`) where it has one; the others go quiet but stay
+links. Leave it out, or pass null, when nobody is signed in or the list couldn't be read: the rail must never break a
+page, so the whole family then shows as it always has. `appsToMark` and `ownAppHref` do the same sums for a site that
+draws its own rail.
+
 The components use no Tailwind classes, so a Tailwind site needs no `@source` for the package. The
 fonts are found by name, or through next/font's variables `--font-fraunces`, `--font-instrument` and
 `--font-plex-mono` when the site serves them itself.

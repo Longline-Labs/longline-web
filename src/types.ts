@@ -1,5 +1,5 @@
 import type { ComponentType, ReactNode } from "react";
-import type { AppKey } from "./apps";
+import type { AppKey, AppsInUse } from "./apps";
 
 export interface ShellLink {
   label: string;
@@ -37,6 +37,13 @@ export interface ShellConfig {
   switcher?: boolean;
   /** Show the rail of all the apps down the left of the page (desktop only). Default true; false alongside `switcher: false`. */
   rail?: boolean;
+  /**
+   * The apps the signed-in person uses (their grants at account.longlinelabs.com, as keys), when the site knows them.
+   * The rail and the switcher then keep those at full strength, say "You use this" under the name and lead to the
+   * signed-in app; the rest go quiet but stay reachable. Leave it out (or pass null) when nobody is signed in, when
+   * the list couldn't be read, or when the person uses only this app: the whole family shows as it always has.
+   */
+  inUse?: AppsInUse | null;
   /** Where the browser remembers the light/dark choice. Default "theme". Coifish keeps its old "coifish-theme". */
   themeStorageKey?: string;
   Link?: LinkComponent;
