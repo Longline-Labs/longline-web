@@ -63,6 +63,13 @@ for (const mode of tokens.modes) {
       check(group, `primary button fill against ${g}`, a.fill, bg, 3);
     }
     check(group, "primary button label on its fill", a["on-fill"], a.fill, 4.5);
+    // A site that takes another accent for its buttons (apps.json `buttonAccent`): that fill and label too.
+    if (app.buttonAccent && app.buttonAccent !== app.accent) {
+      const b = tokens.accents[app.buttonAccent]?.[mode];
+      if (!b) throw new Error(`${app.name}: no accent named ${app.buttonAccent} (buttonAccent)`);
+      for (const [g, bg] of Object.entries(grounds)) check(group, `site button fill (${app.buttonAccent}) against ${g}`, b.fill, bg, 3);
+      check(group, `site button label on its fill (${app.buttonAccent})`, b["on-fill"], b.fill, 4.5);
+    }
     // The brand assets as approved: reported for the record (a logo and a decorative graphic are exempt from the
     // AA rules), never failed, never recoloured here.
     check(group, "accent stroke of the mark on paper (brand asset, reported only)", a.mark, base.paper, 0);

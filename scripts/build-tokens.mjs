@@ -54,6 +54,15 @@ const appAccent = (app) =>
   --ll-mark-accent: var(--ll-accent-${app.accent}-mark);
 }`;
 
+// A site's own button colour (apps.json `buttonAccent`): only on the shell's wrapper for that app, so the filled buttons
+// on its own site change and its stripe, kicker and family card keep the app's accent.
+const siteButtons = (app) =>
+  `.ll-shell[data-app="${app.key}"] {
+  --ll-accent-fill: var(--ll-accent-${app.buttonAccent}-fill);
+  --ll-on-accent: var(--ll-accent-${app.buttonAccent}-on-fill);
+}`;
+const buttonApps = family.apps.filter((app) => app.buttonAccent && app.buttonAccent !== app.accent);
+
 export const css = `/* Longline Labs web tokens. Generated from tokens/tokens.json and apps.json by scripts/build-tokens.mjs;
    edit those, not this. The colour names are Harbor's (@longline/harbor); the accent roles, the type scale and the
    page frame are the shell's own (--ll-*). A site inherits every one of them and defines none (scripts/check-sites.mjs). */
@@ -112,7 +121,10 @@ ${layoutPhone}
 
 /* Each app's accent, by data-app on the shell (or on <html>). Only --ll-accent* changes; nothing else is repainted. */
 ${family.apps.map(appAccent).join("\n")}
-`;
+${buttonApps.length ? `
+/* A site's own button colour (apps.json \`buttonAccent\`): its filled buttons only, on its own site. */
+${buttonApps.map(siteButtons).join("\n")}
+` : ""}`;
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const out = path.join(root, "tokens.css");

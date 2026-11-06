@@ -12,9 +12,11 @@ export interface FamilyApp {
   /** The marketing site's host, or null where none has been decided yet. */
   domain: string | null;
   url: string | null;
-  /** Where the signed-in app lives, where there is one. */
+  /** Where the signed-in app lives, where there is one (packetskipper.com is both its site and its app). */
   appUrl: string | null;
   accent: AccentKey;
+  /** The filled buttons on the app's own site only, where they differ from `accent` (reelminders.com: teal). */
+  buttonAccent?: AccentKey;
   status: AppStatus;
   /** Whether the header's switcher lists the app. */
   switcher: boolean;

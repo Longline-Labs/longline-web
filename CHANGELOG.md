@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.5.1 — 2026-11-06
+
+- **apps.json, `appUrl`**: every app now has its signed-in address, for a person's own apps in the rail and the
+  switcher: PacketSkipper's is packetskipper.com (its site and its app are one; app.packetskipper.com never existed),
+  and BallastBook, ShipShape and AboveBoard went live on November 6 at app.ballastbook.com, app.shipshapefiles.com and
+  app.aboveboarddocs.com. Nothing changes for a visitor who isn't signed in.
+- **apps.json, `buttonAccent`**: an app's site may take another accent for its filled buttons. ReelMinder's is `teal`,
+  the founder's sea blue of October 31, which reelminders.com used to set in its own `site.css` (and which
+  `check:sites` refused). tokens.css now draws it as `.ll-shell[data-app="reelminder"]`, exactly the rule the site had,
+  so reelminders.com looks the same and `npm test` passes. `check:contrast` checks that fill and its label too.
+
 ## 0.5.0 — 2026-11-03
 
 - The rail and the switcher can show which apps the signed-in person uses (single sign-in plan, step 9). `AppRail`

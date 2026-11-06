@@ -431,3 +431,9 @@
   --ll-on-accent: var(--ll-accent-azure-on-fill);
   --ll-mark-accent: var(--ll-accent-azure-mark);
 }
+
+/* A site's own button colour (apps.json `buttonAccent`): its filled buttons only, on its own site. */
+.ll-shell[data-app="reelminder"] {
+  --ll-accent-fill: var(--ll-accent-teal-fill);
+  --ll-on-accent: var(--ll-accent-teal-on-fill);
+}

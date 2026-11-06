@@ -38,10 +38,13 @@ which is what the shell shows.
 - `switcher`: whether the header's switcher lists it (all six today).
 - `domain` / `url`: coifish.com, reelminders.com, packetskipper.com, ballastbook.com, shipshapefiles.com,
   aboveboarddocs.com. A coming-soon app's domain is recorded but not linked until it goes live.
+- `appUrl`: the signed-in app, where a person's own apps lead when the site knows which apps they use (`inUse`, below):
+  app.coifish.com, app.reelminders.com, packetskipper.com (its site and its app are one), app.ballastbook.com,
+  app.shipshapefiles.com, app.aboveboarddocs.com. Everyone else is sent to `url`.
+- `buttonAccent` (optional): the filled buttons on the app's own site only, where they differ from `accent`.
+  reelminders.com's are the family teal (the founder's choice, October 31, 2026); its stripe, kicker and family card
+  keep brass. A site never sets `--ll-accent-fill` itself (`check:sites`).
 - `description`: the one line under the name in the switcher and the family section, as Brandon wrote them.
-
-The two sites already built (reelminders.com, packetskipper.com) still render through the shell; the switcher
-simply treats them as coming soon until their status flips.
 
 ## Consuming it
 
@@ -228,13 +231,16 @@ Brandon runs each production deploy himself in his terminal.
 
 | Where it shows | Repo | Command |
 | --- | --- | --- |
-| longlinelabs.com (cards, longline) | `apps/longlinelabs` | `node scripts/sync.mjs`, then `npx wrangler deploy` |
-| coifish.com (family section, header switcher, rail) and the Coifish app's Dock | `apps/Coifish` | Change `#vX.Y.Z` on `@longline/web` in `package.json`, `npm install`, commit, `git push` (the pre-push hook runs the safety net). Then check Vercel for the new production deployment; on October 30, 2026 the push alone did not start one, and `vercel deploy --prod` from a clean copy (PROGRESS.md there, October 21) did |
-| reelminders.com (family section, switcher, rail) | `apps/ReelMinder` | `rm -rf node_modules/@longline/web && npm install && npm run site:deploy` |
-| packetskipper.com (family section, switcher, rail) | `apps/PacketSkipper` (branch `longline-shell`) | `rm -rf node_modules/@longline/web && npm install && npm run build`, then `npx vercel deploy --prod` (Vercel project `packetskipper`, team `coif-ish`; `npx vercel link --yes --scope coif-ish --project packetskipper` first if the folder is not linked) |
+| longlinelabs.com (cards, longline, rail) | `apps/longlinelabs` | `node scripts/sync.mjs` (reads this folder, not a tag), commit, then `npx wrangler deploy` |
+| coifish.com and app.coifish.com (family section, switcher, rail, the app's Dock) | `apps/Coifish` | Move `#vX.Y.Z` on `@longline/web`, `npm install`, commit, `git push origin main` (the pre-push hook runs the safety net); Vercel project `coifish` builds `main`. If it stalls: `npx vercel deploy --prod --yes --scope coif-ish` |
+| reelminders.com (family section, switcher, rail) | `apps/ReelMinder` | Move the pin, `npm install`, commit, then `npm run site:deploy` (Cloudflare Pages). The app, with Harbor's Dock, deploys when `main` is pushed (Vercel project `reelminders`) |
+| packetskipper.com (site and app in one) | `apps/PacketSkipper` | Move the pin, `npm install`, commit, push `main`, then `npm run launch:vercel` (Brandon runs it) |
+| ballastbook.com | `apps/BallastBook` | Move the pin, `npm install`, commit, then `npm run site:deploy` (Cloudflare). The app: `npx vercel deploy --prod --scope coif-ish` |
+| shipshapefiles.com | `apps/ShipShape` | Move the pin, `npm install`, commit, then `npm run site:deploy` (Cloudflare). The app: `npx vercel deploy --prod --yes --scope coif-ish` |
+| aboveboarddocs.com (site and app in one since November 6, 2026) | `apps/AboveBoard` | Move the pin, `npm install`, commit, `git push origin main`; Vercel project `aboveboard` builds `main`. Never `site:deploy` now: the Cloudflare copy gave up the domain |
 
-ReelMinder and PacketSkipper depend on `file:../../packages/longline-web` copied into `node_modules` (their `.npmrc`
-has `install-links=true`), and npm does not refresh that copy on its own, hence the `rm -rf` first. Coifish pins a tag
-on GitHub so Vercel can fetch it. The Coifish app's in-app Dock reads the same `apps` list (`src/config/apps.ts`
-there), so it moves with the website.
+Every consumer pins a tag on GitHub (`git+https://github.com/Longline-Labs/longline-web.git#vX.Y.Z`, or `github:` in
+ReelMinder) so Vercel and a fresh install can fetch it; `npm install` after moving the tag replaces the copy in
+`node_modules`. The Coifish app's in-app Dock reads the same `apps` list through this package, so it moves with the
+website.
 
