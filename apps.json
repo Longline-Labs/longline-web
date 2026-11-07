@@ -4,7 +4,7 @@
     "legalName": "LONGLINE LABS LLC",
     "url": "https://longlinelabs.com/",
     "_note": "`name` is the brand beside every wordmark; `legalName` is what every site's copyright line says (the shared footer reads it, and no site may override it). `url` is the company site, where the Linked LL in every header leads.",
-    "familyLine": "Apps for community association managers, built to work the same way."
+    "familyLine": "Six small apps from Longline Labs, each built to work the same way."
   },
   "_note": "The family, in the order of the six-colour longline. `status` is \"live\" (the site is up: the switcher and the family section link to it) or \"coming-soon\" (shown with its mark and accent, labelled Coming soon, not linked). Flip one word to launch. `switcher` says whether the header's switcher lists the app at all. Domains as decided October 30, 2026: ballastbook.com, shipshapefiles.com (the product is ShipShape), aboveboarddocs.com. `appUrl` is the signed-in app (packetskipper.com is both site and app); a person's own apps lead there when the rail knows which apps they use. `buttonAccent`, where set, colours only the filled buttons on that app's own site (reelminders.com takes the family teal, the founder's choice of October 31, 2026); the stripe, the kicker and its card keep `accent`.",
   "apps": [
@@ -29,7 +29,7 @@
       "buttonAccent": "teal",
       "status": "live",
       "switcher": true,
-      "description": "Tracks every Association deadline, from insurance expirations and contract renewals to meeting notice dates, and reminds you before each one."
+      "description": "Tracks every association deadline, from insurance expirations and contract renewals to meeting notice dates, and reminds you before each one."
     },
     {
       "key": "packetskipper",
@@ -40,7 +40,7 @@
       "accent": "kelp",
       "status": "live",
       "switcher": true,
-      "description": "Builds Board meeting packets, records the meeting and its action items, and drafts the minutes."
+      "description": "Builds board meeting packets, records the meeting and its action items, and drafts the minutes."
     },
     {
       "key": "ballastbook",
@@ -51,7 +51,7 @@
       "accent": "cobalt",
       "status": "live",
       "switcher": true,
-      "description": "A simple, straightforward Annual Budget builder for each of your Associations."
+      "description": "A simple annual budget builder for each of your associations."
     },
     {
       "key": "shipshapefiles",
@@ -62,7 +62,7 @@
       "accent": "plum",
       "status": "live",
       "switcher": true,
-      "description": "Automatically renames every file to your own custom naming convention, so documents are always easy to find."
+      "description": "Renames every file to your company's own naming convention, so documents are always easy to find."
     },
     {
       "key": "aboveboard",
@@ -73,7 +73,7 @@
       "accent": "azure",
       "status": "live",
       "switcher": true,
-      "description": "An easy-to-use public database where each Association can post its Governing Documents, minutes, and records."
+      "description": "One public page for each association's governing documents, minutes, and records."
     }
   ]
 }

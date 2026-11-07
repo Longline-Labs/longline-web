@@ -2,9 +2,19 @@
 
 ## 0.5.3 — 2026-11-07
 
-- **apps.json, AboveBoard's `description`**: a serial comma, "minutes, and records" (house style: serial commas
-  throughout). Nothing else in the line changes; Brandon's wording is his. Website copy review, November 7, 2026
-  (`research/copy-review-2026-11-07/REPORT.md`). Every site showing the family cards takes it when its pin moves.
+Website copy review, November 7, 2026 (`research/copy-review-2026-11-07/REPORT.md`); Brandon took every suggestion
+("take all suggestions"). Every site showing the family cards takes these when its pin moves.
+
+- **Sentence case for common nouns** (J1): the family section's heading is "Apps for community association managers",
+  and the cards say association, board, annual budget and governing documents in lowercase, as every app's own site
+  does.
+- **The family line no longer repeats the heading** (J2): `company.familyLine`, under the heading and in the header's
+  switcher, is "Six small apps from Longline Labs, each built to work the same way."
+- **Three cards say what the app does** (J3): ShipShape "Renames every file to your company's own naming convention,
+  so documents are always easy to find." (it asks and never guesses, so not "Automatically"); AboveBoard "One public
+  page for each association's governing documents, minutes, and records." (its site calls it a public page, and the
+  manager posts); BallastBook "A simple annual budget builder for each of your associations."
+- A serial comma in AboveBoard's card ("minutes, and records").
 
 ## 0.5.2 — 2026-11-06
 
