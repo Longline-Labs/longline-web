@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.2 — 2026-11-06
+
+- **apps.json, PacketSkipper's `description`** now reads "Builds Board meeting packets, records the meeting and its
+  action items, and drafts the minutes." It used to promise that PacketSkipper "tracks action items until you check
+  them off", which it doesn't: action items are recorded in meeting mode and listed in the minutes (and can be sent to
+  ReelMinder). First-user review, PACKETSKIPPER-F04; Brandon chose the new wording on November 6, 2026. Every site
+  showing the family cards takes it when its pin moves.
+
 ## 0.5.1 — 2026-11-06
 
 - **apps.json, `appUrl`**: every app now has its signed-in address, for a person's own apps in the rail and the

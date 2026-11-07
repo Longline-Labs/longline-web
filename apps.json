@@ -40,7 +40,7 @@
       "accent": "kelp",
       "status": "live",
       "switcher": true,
-      "description": "Builds Board meeting packets, records minutes, and tracks action items until you check them off."
+      "description": "Builds Board meeting packets, records the meeting and its action items, and drafts the minutes."
     },
     {
       "key": "ballastbook",
