@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.3 — 2026-11-07
+
+- **apps.json, AboveBoard's `description`**: a serial comma, "minutes, and records" (house style: serial commas
+  throughout). Nothing else in the line changes; Brandon's wording is his. Website copy review, November 7, 2026
+  (`research/copy-review-2026-11-07/REPORT.md`). Every site showing the family cards takes it when its pin moves.
+
 ## 0.5.2 — 2026-11-06
 
 - **apps.json, PacketSkipper's `description`** now reads "Builds Board meeting packets, records the meeting and its
