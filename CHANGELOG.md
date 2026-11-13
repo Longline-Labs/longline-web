@@ -6,8 +6,8 @@ Wording for a human voice (Brandon, November 13, 2026: "Wording needs fixed and 
 websites"). The voice guide is `research/human-wording-2026-11-13/VOICE.md`. Wording only: nothing exported changes
 shape, so a site takes this by moving its pin.
 
-- **The six cards say what each app does, in a manager's words.** Coifish "Keeps vendor insurance current. Coifish emails
-  each vendor before their coverage ends, collects the new certificate, and holds it for you to approve." ReelMinder
+- **The six cards say what each app does, in a manager's words.** Coifish "Keeps track of vendor insurance. Coifish emails
+  vendors before their coverage ends, collects the new certificate, and holds it for you to approve." ReelMinder
   "Remembers your association deadlines. Insurance renewals, contract renewals, meeting notices: you enter the dates, and
   ReelMinder emails you what's due every Monday." PacketSkipper "Builds the board packet from your agenda, emails it to the
   board, and drafts the minutes from what you record at the meeting." BallastBook "Builds next year's budget for each

@@ -17,7 +17,7 @@
       "accent": "koi",
       "status": "live",
       "switcher": true,
-      "description": "Keeps vendor insurance current. Coifish emails each vendor before their coverage ends, collects the new certificate, and holds it for you to approve."
+      "description": "Keeps track of vendor insurance. Coifish emails vendors before their coverage ends, collects the new certificate, and holds it for you to approve."
     },
     {
       "key": "reelminder",
