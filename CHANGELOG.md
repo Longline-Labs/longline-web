@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.5.5 — 2026-11-13
+## 0.5.6 — 2026-11-13
 
 Wording for a human voice (Brandon, November 13, 2026: "Wording needs fixed and needs to sound more human on all
 websites"). The voice guide is `research/human-wording-2026-11-13/VOICE.md`. Wording only: nothing exported changes
