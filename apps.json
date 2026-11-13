@@ -4,7 +4,7 @@
     "legalName": "LONGLINE LABS LLC",
     "url": "https://longlinelabs.com/",
     "_note": "`name` is the brand beside every wordmark; `legalName` is what every site's copyright line says (the shared footer reads it, and no site may override it). `url` is the company site, where the Linked LL in every header leads.",
-    "familyLine": "Six small apps from Longline Labs, each built to work the same way."
+    "familyLine": "Six small apps from Longline Labs, built to work alike."
   },
   "_note": "The family, in the order of the six-colour longline. `status` is \"live\" (the site is up: the switcher and the family section link to it) or \"coming-soon\" (shown with its mark and accent, labelled Coming soon, not linked). Flip one word to launch. `switcher` says whether the header's switcher lists the app at all. Domains as decided October 30, 2026: ballastbook.com, shipshapefiles.com (the product is ShipShape), aboveboarddocs.com. `appUrl` is the signed-in app (packetskipper.com is both site and app); a person's own apps lead there when the rail knows which apps they use. `buttonAccent`, where set, colours only the filled buttons on that app's own site (reelminders.com takes the family teal, the founder's choice of October 31, 2026); the stripe, the kicker and its card keep `accent`.",
   "apps": [
@@ -17,7 +17,7 @@
       "accent": "koi",
       "status": "live",
       "switcher": true,
-      "description": "Automated vendor COI tracking. Coifish reminds vendors when their insurance is expiring and collects the new certificates, so you don’t have to."
+      "description": "Keeps vendor insurance current. Coifish emails each vendor before their coverage ends, collects the new certificate, and holds it for you to approve."
     },
     {
       "key": "reelminder",
@@ -29,7 +29,7 @@
       "buttonAccent": "teal",
       "status": "live",
       "switcher": true,
-      "description": "Tracks every association deadline, from insurance expirations and contract renewals to meeting notice dates, and reminds you before each one."
+      "description": "Remembers your association deadlines. Insurance renewals, contract renewals, meeting notices: you enter the dates, and ReelMinder emails you what's due every Monday."
     },
     {
       "key": "packetskipper",
@@ -40,7 +40,7 @@
       "accent": "kelp",
       "status": "live",
       "switcher": true,
-      "description": "Builds board meeting packets, records the meeting and its action items, and drafts the minutes."
+      "description": "Builds the board packet from your agenda, emails it to the board, and drafts the minutes from what you record at the meeting."
     },
     {
       "key": "ballastbook",
@@ -51,7 +51,7 @@
       "accent": "cobalt",
       "status": "live",
       "switcher": true,
-      "description": "A simple annual budget builder for each of your associations."
+      "description": "Builds next year's budget for each association. Type the numbers beside last year's, and BallastBook works out what each unit pays and makes the PDF for the board."
     },
     {
       "key": "shipshapefiles",
@@ -62,7 +62,7 @@
       "accent": "plum",
       "status": "live",
       "switcher": true,
-      "description": "Renames every file to your company's own naming convention, so documents are always easy to find."
+      "description": "Names your files the way your company names them. Drop in a PDF, answer two or three questions, and download it with the right name."
     },
     {
       "key": "aboveboard",
@@ -73,7 +73,7 @@
       "accent": "azure",
       "status": "live",
       "switcher": true,
-      "description": "One public page for each association's governing documents, minutes, and records."
+      "description": "A public page for each association's documents. Upload the bylaws, budgets, and minutes once, and owners, buyers, and lenders find them at one address."
     }
   ]
 }

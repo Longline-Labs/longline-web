@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.5.5 — 2026-11-13
+
+Wording for a human voice (Brandon, November 13, 2026: "Wording needs fixed and needs to sound more human on all
+websites"). The voice guide is `research/human-wording-2026-11-13/VOICE.md`. Wording only: nothing exported changes
+shape, so a site takes this by moving its pin.
+
+- **The six cards say what each app does, in a manager's words.** Coifish "Keeps vendor insurance current. Coifish emails
+  each vendor before their coverage ends, collects the new certificate, and holds it for you to approve." ReelMinder
+  "Remembers your association deadlines. Insurance renewals, contract renewals, meeting notices: you enter the dates, and
+  ReelMinder emails you what's due every Monday." PacketSkipper "Builds the board packet from your agenda, emails it to the
+  board, and drafts the minutes from what you record at the meeting." BallastBook "Builds next year's budget for each
+  association. Type the numbers beside last year's, and BallastBook works out what each unit pays and makes the PDF for the
+  board." ShipShape "Names your files the way your company names them. Drop in a PDF, answer two or three questions, and
+  download it with the right name." (it takes PDFs only, so not "every file") AboveBoard "A public page for each
+  association's documents. Upload the bylaws, budgets, and minutes once, and owners, buyers, and lenders find them at one
+  address."
+- **The family line** (`company.familyLine`) is "Six small apps from Longline Labs, built to work alike."
+
 ## 0.5.4 — 2026-11-13
 
 Capital letters for the two job titles (Brandon, November 13, 2026: "Community Manager and Community Association Manager
