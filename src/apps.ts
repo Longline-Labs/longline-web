@@ -15,7 +15,7 @@ export interface FamilyApp {
   /** Where the signed-in app lives, where there is one (packetskipper.com is both its site and its app). */
   appUrl: string | null;
   accent: AccentKey;
-  /** The filled buttons on the app's own site only, where they differ from `accent` (reelminders.com: teal). */
+  /** The filled buttons on the app's own site only, where they differ from `accent` (reelminder.com: teal). */
   buttonAccent?: AccentKey;
   status: AppStatus;
   /** Whether the header's switcher lists the app. */

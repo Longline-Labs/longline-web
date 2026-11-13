@@ -4,7 +4,7 @@
 
 **Wording (Brandon, November 13, 2026):** write every public word in the Longline Labs voice: `../../research/human-wording-2026-11-13/VOICE.md`. Short sentences, the manager's own words, no stock phrases, every claim true in the app today.
 
-The website shell shared by coifish.com, reelminders.com and packetskipper.com. One family: the same
+The website shell shared by coifish.com, reelminder.com and packetskipper.com. One family: the same
 header, footer, type and colours on every site, so moving between them feels like switching tabs.
 Each site changes exactly three things: its wordmark, its copy, and one accent colour.
 
@@ -40,13 +40,13 @@ which is what the shell shows.
   the family section; a coming-soon app shows its mark and accent with a "Coming soon" label, is not a link,
   and announces itself as "Name, coming soon". **To launch an app, change that one word.**
 - `switcher`: whether the header's switcher lists it (all six today).
-- `domain` / `url`: coifish.com, reelminders.com, packetskipper.com, ballastbook.com, shipshapefiles.com,
+- `domain` / `url`: coifish.com, reelminder.com, packetskipper.com, ballastbook.com, shipshapefiles.com,
   aboveboarddocs.com. A coming-soon app's domain is recorded but not linked until it goes live.
 - `appUrl`: the signed-in app, where a person's own apps lead when the site knows which apps they use (`inUse`, below):
-  app.coifish.com, app.reelminders.com, packetskipper.com (its site and its app are one), app.ballastbook.com,
+  app.coifish.com, app.reelminder.com, packetskipper.com (its site and its app are one), app.ballastbook.com,
   app.shipshapefiles.com, app.aboveboarddocs.com. Everyone else is sent to `url`.
 - `buttonAccent` (optional): the filled buttons on the app's own site only, where they differ from `accent`.
-  reelminders.com's are the family teal (the founder's choice, October 31, 2026); its stripe, kicker and family card
+  reelminder.com's are the family teal (the founder's choice, October 31, 2026); its stripe, kicker and family card
   keep brass. A site never sets `--ll-accent-fill` itself (`check:sites`).
 - `description`: the one line under the name in the switcher and the family section, as Brandon wrote them.
 
@@ -237,7 +237,7 @@ Brandon runs each production deploy himself in his terminal.
 | --- | --- | --- |
 | longlinelabs.com (cards, longline, rail) | `apps/longlinelabs` | `node scripts/sync.mjs` (reads this folder, not a tag), commit, then `npx wrangler deploy` |
 | coifish.com and app.coifish.com (family section, switcher, rail, the app's Dock) | `apps/Coifish` | Move `#vX.Y.Z` on `@longline/web`, `npm install`, commit, `git push origin main` (the pre-push hook runs the safety net); Vercel project `coifish` builds `main`. If it stalls: `npx vercel deploy --prod --yes --scope coif-ish` |
-| reelminders.com (family section, switcher, rail) | `apps/ReelMinder` | Move the pin, `npm install`, commit, then `npm run site:deploy` (Cloudflare Pages). The app, with Harbor's Dock, deploys when `main` is pushed (Vercel project `reelminders`) |
+| reelminder.com (family section, switcher, rail) | `apps/ReelMinder` | Move the pin, `npm install`, commit, then `npm run site:deploy` (Cloudflare Pages). The app, with Harbor's Dock, deploys when `main` is pushed (Vercel project `reelminders`) |
 | packetskipper.com (site and app in one) | `apps/PacketSkipper` | Move the pin, `npm install`, commit, push `main`, then `npm run launch:vercel` (Brandon runs it) |
 | ballastbook.com | `apps/BallastBook` | Move the pin, `npm install`, commit, then `npm run site:deploy` (Cloudflare). The app: `npx vercel deploy --prod --scope coif-ish` |
 | shipshapefiles.com | `apps/ShipShape` | Move the pin, `npm install`, commit, then `npm run site:deploy` (Cloudflare). The app: `npx vercel deploy --prod --yes --scope coif-ish` |

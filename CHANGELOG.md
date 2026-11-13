@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.5.7 — 2026-11-13
+
+ReelMinder moves to reelminder.com (Brandon, November 13, 2026: the name stays ReelMinder, the website and the app move
+to reelminder.com, and reelminders.com forwards there). Addresses only: nothing exported changes shape, so a site takes
+this by moving its pin (longlinelabs.com by running `node scripts/sync.mjs`).
+
+- **`apps.json`**: ReelMinder's `domain` is reelminder.com, its `url` https://reelminder.com and its `appUrl`
+  https://app.reelminder.com. The family section, the header's switcher and the rail link there. The old addresses
+  forward to the same page on the new one.
+- README, `sites.json`'s label and the package description name the new address.
+
 ## 0.5.6 — 2026-11-13
 
 Wording for a human voice (Brandon, November 13, 2026: "Wording needs fixed and needs to sound more human on all
