@@ -1,5 +1,7 @@
 # @longline/web
 
+**Wording rule (Brandon, November 13, 2026):** Community Manager, Community Managers, Community Association Manager and Community Association Managers are always written with capital letters, plurals and possessives too, in the middle of a sentence, in headings, buttons, page titles, meta descriptions, social-card text, emails and PDFs. Only those two terms: "manager", "property manager", "association manager", "community association management" and "CAM" stay as they are.
+
 The website shell shared by coifish.com, reelminders.com and packetskipper.com. One family: the same
 header, footer, type and colours on every site, so moving between them feels like switching tabs.
 Each site changes exactly three things: its wordmark, its copy, and one accent colour.

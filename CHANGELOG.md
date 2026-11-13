@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.5.4 — 2026-11-13
+
+Capital letters for the two job titles (Brandon, November 13, 2026: "Community Manager and Community Association Manager
+needs to be capitalized throughout every website and app"). Wording only: nothing exported changes shape, so a site
+takes this by moving its pin.
+
+- **`FamilySection`'s default heading** is "Apps for Community Association Managers" on every site (it was "Apps for
+  community association managers", written in sentence case since 0.5.3). Community Manager and Community Association
+  Manager are the one exception to sentence case, plurals and possessives too.
+- The README carries the rule so later changes keep it.
+
 ## 0.5.3 — 2026-11-07
 
 Website copy review, November 7, 2026 (`research/copy-review-2026-11-07/REPORT.md`); Brandon took every suggestion
